@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace MobiManager.Model
-{
+{   //Device Class
     public class Device
     {
         public Guid DeviceID { get; set; }
