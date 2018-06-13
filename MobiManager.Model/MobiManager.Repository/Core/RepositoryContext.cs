@@ -7,6 +7,9 @@ namespace MobiManager.Repository.Core
         #region Members
         private static readonly RepositoryContext _instance = new RepositoryContext();
         private UserRepository _userRepository;
+        private DeviceUserRepository _deviceUserRepository;
+        private DeviceRepository _deviceRepository;
+        private DeviceAssignationRepository _deviceAssignationRepository;
 
         #endregion
 
@@ -36,6 +39,36 @@ namespace MobiManager.Repository.Core
                 return _userRepository;
             }
         }
+
+        public DeviceUserRepository DeviceUserRepository
+        {
+            get
+            {
+                if (_deviceUserRepository == null)
+                    _deviceUserRepository = new DeviceUserRepository();
+                return _deviceUserRepository;
+            }
+        }
+
+        public DeviceRepository DeviceRepository
+        {
+            get
+            {
+                if (_deviceRepository == null)
+                    _deviceRepository = new DeviceRepository();
+                return _deviceRepository;
+            }
+        }
+
+        public DeviceAssignationRepository DeviceAssignationRepository
+        {
+            get
+            {
+                if (_deviceAssignationRepository == null)
+                    _deviceAssignationRepository = new DeviceAssignationRepository();
+                return _deviceAssignationRepository;
+            }
+        }
         #endregion
 
         #region IDisposable Implementation
@@ -53,7 +86,18 @@ namespace MobiManager.Repository.Core
                 {
                     _userRepository = null;
                 }
-
+                if (_deviceUserRepository != null)
+                {
+                    _deviceUserRepository = null;
+                }
+                if (_deviceRepository != null)
+                {
+                    _deviceRepository = null;
+                }
+                if (_deviceAssignationRepository != null)
+                {
+                    _deviceAssignationRepository = null;
+                }
             }
         }
 

@@ -11,6 +11,6 @@ namespace MobiManager.Model
         public string OperatingSystem { get; set; }
         public string OSVersion { get; set; }
         public string Processor { get; set; }
-        public string RAMAmount { get; set; }
+        public int RAMAmount { get; set; }
     }
 }
