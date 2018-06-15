@@ -71,6 +71,7 @@
     <Content Include="Index.html" />
     <Content Include="Resource\logo.png" />
     <Content Include="Resource\main-page-info.jpeg" />
+    <Content Include="Resource\signin-page.jpeg" />
     <Content Include="Scripts\appController.js" />
     <Content Include="Scripts\Globals.js" />
     <Content Include="Style\FooterStyle.css" />
