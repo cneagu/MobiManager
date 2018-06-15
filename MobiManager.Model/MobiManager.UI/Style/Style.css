@@ -14,5 +14,13 @@ a.navbar-brand {
     box-shadow: 0 -2px 2px -2px green;
 }
 #main-page-info {
+    background-size: cover;
+    position: relative;
+    min-height: 500px;
+    background: url('../Resource/main-page-info.jpeg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    text-align: center;
+    color: black;
     box-shadow: 0px 1px 1px green;
 }

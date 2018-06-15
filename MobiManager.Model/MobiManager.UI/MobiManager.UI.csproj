@@ -69,6 +69,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Index.html" />
+    <Content Include="Resource\logo.png" />
+    <Content Include="Resource\main-page-info.jpeg" />
     <Content Include="Scripts\appController.js" />
     <Content Include="Scripts\Globals.js" />
     <Content Include="Style\FooterStyle.css" />
@@ -88,7 +90,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resource\" />
     <Folder Include="Scripts\Controllers\" />
     <Folder Include="Scripts\Library\" />
     <Folder Include="Scripts\Services\" />
