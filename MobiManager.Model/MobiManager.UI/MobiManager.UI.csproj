@@ -71,6 +71,7 @@
     <Content Include="Index.html" />
     <Content Include="Scripts\appController.js" />
     <Content Include="Scripts\Globals.js" />
+    <Content Include="Style\FooterStyle.css" />
     <Content Include="Style\Style.css" />
     <Content Include="Web.config" />
   </ItemGroup>

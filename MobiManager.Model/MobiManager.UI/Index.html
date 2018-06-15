@@ -4,13 +4,128 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>MobiManager</title>
+    <link rel="shortcut icon" href="\Resource\logo.png" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Mukta+Mahee:400,600|Press+Start+2P" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/Style/Style.css">
+    <link href="Style/FooterStyle.css" rel="stylesheet" />
 </head>
 <body>
+    <nav class="navbar navbar-expand-sm navbar-light fixed-top py-1">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="\Resource\logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                Mobi Manager
+            </a>
+            <ul class="navbar-nav md-auto">
+                <li class="nav-item dropdown user_menu" id="user_menu" hidden>
+                    <a href="#" class="nav-link dropdown-toggle " data-toggle="dropdown" id="head-userName"></a>
+                    <div class="dropdown-menu">
+                        <a href="#user_profile" id="" class="dropdown-item">
+                            <i class="fa fa-user-circle"></i> Profile
+                        </a>
+                        <a href="#user_profile" id="user-settings" class="dropdown-item setings" data-toggle="modal" data-target="#setings">
+                            <i class="fa fa-gear"></i> Settings
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#home" class="dropdown-item" id="logOut">
+                            <i class="fa fa-sign-out"></i> Logout
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item login-button" id="login-button">
+                    <button id="primary-login" type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#loginModal"><i class="fa fa-sign-in"></i> Log In</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
+    <div id="home">
+        <section id="messages">
+            <div class="container">
+
+            </div>
+        </section>
+
+        <section id="main-page-info" class="p-5">
+            <div class="row">
+                <div class="col">
+                    <div class="container pt-5">
+                        <h1>Welcome to my MobiManager project</h1>
+                        <p class="d-none d-md-block">Let's get started now</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="main-page-singin">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center">
+                        <div class="py-5">
+                            <h1 class="display-4">Device assignation</h1>
+                            <p class="lead">To assign a device you need to create an account</p>
+                            <a href="#singin" class="btn btn-outline-success singin-page">Sign in now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+    <footer>
+        <div class="footer" id="footer">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
+                        <h3> MobiManager </h3>
+                        <ul>
+                            <li> <a href="#"> Help </a> </li>
+                            <li> <a href="#"> Privacy Policy </a> </li>
+                            <li> <a href="#"> Rules </a> </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2  col-sm-4 col-xs-6"></div>
+                    <div class="col-lg-2  col-sm-2 col-xs-6"></div>
+                    <div class="col-lg-3 col-md-4 col-sm-8 col-xs-6">
+                        <h3> USEFUL INFORMATION </h3>
+                        <ul>
+                            <li> <a href="#"> Site Map  </a> </li>
+                            <li> <a href="#"> County Map </a> </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3  col-md-5 col-sm-8 col-xs-12 ">
+                        <h3> Subscribe Newsletter </h3>
+                        <ul>
+                            <li>
+                                <div class="input-append newsletter-box text-center">
+                                    <input type="text" class="full text-center" placeholder="Email ">
+                                    <button class="btn  bg-danger" type="button"> Subscribe <i class="fa fa-long-arrow-right"> </i> </button>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="social">
+                            <li> <a href="#"> <i class=" fa fa-facebook">   </i> </a> </li>
+                            <li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li>
+                            <li> <a href="#"> <i class="fa fa-google-plus">   </i> </a> </li>
+                            <li> <a href="#"> <i class="fa fa-pinterest">   </i> </a> </li>
+                            <li> <a href="#"> <i class="fa fa-youtube">   </i> </a> </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--/.row-->
+                <p class="pull-left copyright"> Copyright © MobiManager 2018. All right reserved. </p>
+            </div>
+            <!--/.container-->
+        </div>
+        <!--/.footer-->
+    </footer>
 </body>
 </html>

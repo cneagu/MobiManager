@@ -1,2 +1,18 @@
 ﻿body {
 }
+
+a.navbar-brand {
+    font-family: 'Press Start 2P' !important;
+}
+
+.navbar {
+    background-color: #e3f2fd;
+    box-shadow: 2px 2px 5px green;
+}
+
+#main-page-singin {
+    box-shadow: 0 -2px 2px -2px green;
+}
+#main-page-info {
+    box-shadow: 0px 1px 1px green;
+}
