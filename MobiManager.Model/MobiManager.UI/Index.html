@@ -151,12 +151,17 @@
                         </a>
                     </div>
                     <div class="col-md-2">
-                        <a href="#tabs-3" class="btn btn-secondary btn-block setings" data-toggle="modal" data-target="#setings">
+                        <a href="#" class="btn btn-secondary btn-block setings" data-toggle="modal" data-target="#setings">
                             <i class="fa fa-gear"></i>  Setings
                         </a>
                     </div>
+                    <div class="col-md-2">
+                        <a href="#" class="btn btn-success btn-block" data-toggle="modal" data-target="#assingDevice">
+                            <i class="fa fa-id-badge"></i>  Assign Device
+                        </a>
+                    </div>
+                    </di
                 </div>
-            </div>
         </section>
 
         <section id="profile">
@@ -265,7 +270,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="contactModalTitle">Log in with your email account</h5>
+                    <h5 class="modal-title" id="contactModalTitle">Log in</h5>
                     <button class="close" data-dismiss="modal"><span>&times;</span></button>
                 </div>
                 <div class="modal-body">
@@ -283,6 +288,154 @@
                 </div>
                 <div class="modal-footer justify-content-center">
                     <p class="font-weight-bold">Don't have an account?  <a href="#singin" class="singin-page" data-dismiss="modal">Sing in today</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade text-dark" id="setings">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-secondary text-white">
+                    <h5 class="modal-title" id="contactModalTitle">Setings</h5>
+                    <button class="close" data-dismiss="modal"><span>&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="contactModalTitle">Name</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="container row">
+                                <h5>Your First Name is: </h5>
+                                <h5 id="current-FirstName"></h5>
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group form-group-sm">
+                            <label for="text">New First Name</label>
+                            <input name="new-seting-firstName" id="new-seting-firstName" class="form-control" placeholder="Input First Name">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="container row">
+                                <h5>Your Last Name is: </h5>
+                                <h5 id="current-LastName"></h5>
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group form-group-sm">
+                            <label for="Text">New Last Name</label>
+                            <input name="new-seting-lastName" id="new-seting-LastName" class="form-control" placeholder="Input Last Name">
+                        </div>
+                    </div>
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="contactModalTitle">Username</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="container row">
+                                <h5>Your Username is: </h5>
+                                <h5 id="current-Username"></h5>
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group form-group-sm">
+                            <label for="Username">New Username</label>
+                            <input name="new-seting-username" id="new-seting-username" class="form-control" placeholder="Input UserName">
+                        </div>
+                    </div>
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="contactModalTitle">Password</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 form-group form-group-sm">
+                            <label for="Curent-Password">Curent Password</label>
+                            <input name="new-seting-curent-password" id="new-seting-curent-password" class="form-control" placeholder="Input Password">
+                        </div>
+                        <div class="col-md-4 form-group form-group-sm">
+                            <label for="New-Password">New Password</label>
+                            <input name="new-seting-new-password" id="new-seting-new-password" class="form-control" placeholder="Input Password">
+                        </div>
+                        <div class="col-md-4 form-group form-group-sm">
+                            <label for="Confirm-Password">Confirm New Password</label>
+                            <input name="new-seting-new-cpassword" id="new-seting-new-cpassword" class="form-control" placeholder="Input Password">
+                        </div>
+                    </div>
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="contactModalTitle">Role</h5>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="container row">
+                                <h5>Your current role is: </h5>
+                                <h5 id="current-role"></h5>
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group form-group-sm">
+                            <label for="Curent-Role">New Role</label>
+                            <select name="new-role" class="form-control form-control-sm" id="new-role" required>
+                                <option value="" disabled selected>Select new role</option>
+                                <option value="manager">manager</option>
+                                <option value="developer">developer</option>
+                                <option value="CEO">CEO</option>
+                                <option value="architect">architect</option>
+                                <option value="human resource">human resource</option>
+                                <option value="Public relations">human resource</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn btn-warning btn-block" id="update-setings"><i class="fa fa-upload"></i>  Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade text-dark" id="addNewDevice">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="contactModalTitle">Create new Device</h5>
+                    <button class="close" data-dismiss="modal"><span>&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="deviceName">Name</label>
+                        <input type="text" name="new-name" id="new-name" class="form-control" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="Manufacturer">Manufacturer</label>
+                        <input type="text" name="new-manufacturer" id="new-manufacturer" class="form-control" placeholder="Manufacturer">
+                    </div>
+                    <div class="form-group">
+                        <label for="Type">Type</label>
+                        <select name="new-type" class="form-control form-control-sm" id="new-type" required>
+                            <option value="" disabled selected>Select a Type</option>
+                            <option value="0">Phone</option>
+                            <option value="1">Tablet</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="OperatingSystem">Operating System</label>
+                        <input type="text" name="new-operatingSystem" id="new-operatingSystem" class="form-control" placeholder="OperatingSystem">
+                    </div>
+                    <div class="form-group">
+                        <label for="OSVersion">OS Version</label>
+                        <input type="text" name="new-osVersion" id="new-osVersion" class="form-control" placeholder="OSVersion">
+                    </div>
+                    <div class="form-group">
+                        <label for="Processor">Processor</label>
+                        <input type="text" name="new-processor" id="new-processor" class="form-control" placeholder="Processor">
+                    </div>
+                    <div class="form-group">
+                        <label for="RAMAmount">RAM Amount</label>
+                        <input type="text" name="new-ramAmount" id="new-ramAmount" class="form-control" placeholder="RAMAmount">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success btn-block" id="new-device"><i class="fa fa-plus"></i>  Add new Device</button>
                 </div>
             </div>
         </div>
