@@ -69,6 +69,17 @@ function validaterePassword(rePassword, password, id) {
     }
 }
 
+function dropdownValidate(item, id) {
+    if (item === null) {
+        $(id).addClass("is-invalid");
+        alert("please select " + id.substring(5));
+        return '';
+    }
+    $(id).removeClass("is-invalid");
+    $(id).addClass("is-valid");
+    return item;
+}
+
 function validateTerms(term) {
     if (term == 0)
         alert("Please read an check Terms and conditions");

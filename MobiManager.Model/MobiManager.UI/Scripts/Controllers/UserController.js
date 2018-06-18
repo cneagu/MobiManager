@@ -20,8 +20,38 @@
     });
 
     this.LogIn = function () {
-        $('#logIn').on('click', function () {
-            
+        $('#singIn').on('click', function () {
+            var role = dropdownValidate($('#new-role').val(), '#new-role');
+            var location = dropdownValidate($('#new-location').val(), '#new-location');
+            var terms = validateTerms($('#new-terms').is(':checked') ? 1 : 0);
+            if (terms && cPassword !== null) {
+                var userInput = {
+                    FirstName: firstName,
+                    LastName: lastName,
+                    UserName: userName,
+                    Password: password,
+                    Role: role,
+                    Location: location
+                };
+                if (validate(userInput) == 1) {
+                    function responseNewUser(data) {
+                        alert('New account created!   now you can login :)');
+                    }
+                    function responseNewUserLocation(data) {
+                        window.location.hash = '#home';
+                    }
+
+                    function checkteUserData(user) {
+                        if (user.UserName) {
+                            if (user.UserName == userInput.username)
+                                alert('The field already exists ' + 'UserName : ' + user.UserName + ' ');
+                        } else {
+                            //insert
+                        }
+
+                    }
+                }
+            }
         });
     };
 };
