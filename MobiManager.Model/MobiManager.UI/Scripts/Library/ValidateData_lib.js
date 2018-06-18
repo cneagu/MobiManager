@@ -10,22 +10,23 @@
     }
 }
 
-function validateEmail(email, id) {
-    if (!(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i.test(email))) {
-        $(id).addClass("is-invalid");
-        email = '';
-        return email;
-    } else {
-        $(id).removeClass("is-invalid");
-        $(id).addClass("is-valid");
-        return email;
-    }
-}
+//function validateEmail(email, id) {
+//    if (!(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i.test(email))) {
+//        $(id).addClass("is-invalid");
+//        email = '';
+//        return email;
+//    } else {
+//        $(id).removeClass("is-invalid");
+//        $(id).addClass("is-valid");
+//        return email;
+//    }
+//}
 
 function validateUsername(username, id) {
     if (!(/^[a-z][a-z0-9_.-]{4,19}$/i.test(username))) {
         $(id).addClass("is-invalid");
         username = '';
+        console.log('cc');
         return username;
     }
     else {
@@ -36,15 +37,25 @@ function validateUsername(username, id) {
 }
 
 function validatePassword(password, id) {
-    if (!(/^(?=.*\d)(?=.*[a-z])[0-9a-zA-Z]{6,}$/i.test(password))) {
-        $(id).addClass("is-invalid");
+    errors = [];
+    if (password.length < 8) {
+        errors.push("Your password must be at least 8 characters");
+    }
+    if (password.search(/[a-z]/i) < 0) {
+        errors.push("Your password must contain at least one letter.");
+    }
+    if (password.search(/[0-9]/) < 0) {
+        errors.push("Your password must contain at least one digit.");
+    }
+    if (errors.length > 0) {
+        alert(errors.join("\n"));
         password = '';
-        return password;
-    } else {
-        $(id).removeClass("is-invalid");
-        $(id).addClass("is-valid");
+        $(id).addClass("is-invalid");
         return password;
     }
+    $(id).removeClass("is-invalid");
+    $(id).addClass("is-valid");
+    return password;
 }
 
 function validaterePassword(rePassword, password, id) {
