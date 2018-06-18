@@ -50,10 +50,6 @@
     <Compile Include="UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MobiManager.API\MobiManager.API.csproj">
-      <Project>{4600aba3-2e58-47af-b97c-d41fe29c0f39}</Project>
-      <Name>MobiManager.API</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MobiManager.Model\MobiManager.Model.csproj">
       <Project>{540c1ac2-d969-4d00-9343-9b6d19d39a36}</Project>
       <Name>MobiManager.Model</Name>

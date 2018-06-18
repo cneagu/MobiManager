@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MobiManager.Business.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,11 +14,11 @@ namespace MobiManager.API.Controllers
     {
         [HttpGet]
         [Route("LogIn/{userName}")]
-        public void string ReadUserName(string username)
+        public string ReadUserName(string username)
         {
-            using(RepositoryContext)
+            using (BusinessContext context = new BusinessContext())
             {
-                return;
+                return context.UserBusiness.ReadUserName(username);
             }
         }
     }

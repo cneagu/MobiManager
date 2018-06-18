@@ -112,6 +112,10 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MobiManager.Business\MobiManager.Business.csproj">
+      <Project>{e894ba62-9dde-4e6a-914c-eecfcffc849a}</Project>
+      <Name>MobiManager.Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MobiManager.Model\MobiManager.Model.csproj">
       <Project>{540c1ac2-d969-4d00-9343-9b6d19d39a36}</Project>
       <Name>MobiManager.Model</Name>
