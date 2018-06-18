@@ -69,22 +69,6 @@ function validaterePassword(rePassword, password, id) {
     }
 }
 
-function locationValidate(country, county, city) {
-    if (country == null || country == '') {
-        $('#new-country').addClass("is-invalid");
-        $('#new-county').addClass("is-invalid");
-        $('#new-city').addClass("is-invalid");
-        return 0;
-    }
-    else if (county == null || county == '') {
-        $('#new-country').removeClass("is-invalid");
-        $('#new-country').addClass("is-valid");
-        $('#new-county').addClass("is-invalid");
-        $('#new-city').addClass("is-invalid");
-        return 0;
-    }
-}
-
 function validateTerms(term) {
     if (term == 0)
         alert("Please read an check Terms and conditions");

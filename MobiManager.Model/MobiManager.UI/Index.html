@@ -114,13 +114,26 @@
                                             <input type="password" id="new-c-password" class="form-control form-control-lg" placeholder="Confirm Password">
                                         </div>
                                         <div class="form-group">
-                                            <select name="Country" class="form-control form-control-lg" id="new-country" required>
-                                                <option value="" disabled selected>Select a Role</option>
+                                            <select name="new-role" class="form-control form-control-lg" id="new-role" required>
+                                                <option value="" disabled selected>Select a role</option>
+                                                <option value="manager">manager</option>
+                                                <option value="developer">developer</option>
+                                                <option value="CEO">CEO</option>
+                                                <option value="architect">architect</option>
+                                                <option value="human resource">human resource</option>
+                                                <option value="Public relations">public relation</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <select name="County" class="form-control form-control-lg" id="new-county" required>
+                                            <select name="new-location" class="form-control form-control-lg" id="new-location" required>
                                                 <option value="" disabled selected>Select a Location</option>
+                                                <option value="cluj">cluj</option>
+                                                <option value="alba">alba</option>
+                                                <option value="bucuresti">bucuresti</option>
+                                                <option value="zalau">zalau</option>
+                                                <option value="deva">deva</option>
+                                                <option value="timisoara">timisoara</option>
+                                                <option value="constanta">constanta</option>
                                             </select>
                                         </div>
                                         <div class="form-check form-check-inline">
@@ -385,7 +398,7 @@
                         </div>
                         <div class="col-md-6 form-group form-group-sm">
                             <label for="Curent-Role">New Role</label>
-                            <select name="new-role" class="form-control form-control-sm" id="new-role" required>
+                            <select name="new-seting-role" class="form-control form-control-sm" id="new-seting-role" required>
                                 <option value="" disabled selected>Select new role</option>
                                 <option value="manager">manager</option>
                                 <option value="developer">developer</option>
