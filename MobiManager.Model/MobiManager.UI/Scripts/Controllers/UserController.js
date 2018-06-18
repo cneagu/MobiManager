@@ -39,15 +39,16 @@
                         window.location.hash = '#home';
                     }
 
-                    function checkteUserData(user) {
-                        if (user.UserName) {
-                            if (user.UserName == userInput.username)
-                                alert('The field already exists ' + 'UserName : ' + user.UserName + ' ');
+                    function checkteUserData(userName) {
+                        if (userName) {
+                            if (userName == userInput.username)
+                                alert('The field already exists ' + 'UserName : ' + userName + ' ');
                         } else {
-                            //insert
+                            console.log('success');
                         }
 
                     }
+                    serviceContext.UserService().ReadUserName('#singin', userInput.UserName, checkteUserData);
                 }
             }
         });
