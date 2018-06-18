@@ -244,6 +244,20 @@ BEGIN
 END
 GO
 
+CREATE PROCEDURE dbo.Users_ReadLogIn
+(
+@UserName nvarchar(50),
+@Password nvarchar(50)
+)
+AS
+BEGIN
+	SELECT  UserID			
+	FROM	[Users]
+	WHERE	UserName = @UserName AND
+			[Password] = @Password
+END
+GO
+
 CREATE PROCEDURE dbo.Devices_ReadByID
 (
 @DeviceID uniqueidentifier
