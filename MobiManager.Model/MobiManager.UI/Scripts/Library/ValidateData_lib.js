@@ -26,7 +26,6 @@ function validateUsername(username, id) {
     if (!(/^[a-z][a-z0-9_.-]{4,19}$/i.test(username))) {
         $(id).addClass("is-invalid");
         username = '';
-        console.log('cc');
         return username;
     }
     else {
@@ -59,7 +58,7 @@ function validatePassword(password, id) {
 }
 
 function validaterePassword(rePassword, password, id) {
-    if (rePassword != password || rePassword == '') {
+    if (rePassword !== password || rePassword === '') {
         $(id).addClass("is-invalid");
         rePassword = '';
         return rePassword;
@@ -67,18 +66,6 @@ function validaterePassword(rePassword, password, id) {
         $(id).removeClass("is-invalid");
         $(id).addClass("is-valid");
         return rePassword;
-    }
-}
-
-function validatePhoneNumber(phoneNumber, id) {
-    if (!(/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})$/i.test(phoneNumber))) {
-        $(id).addClass("is-invalid");
-        phoneNumber = '';
-        return phoneNumber;
-    } else {
-        $(id).removeClass("is-invalid");
-        $(id).addClass("is-valid");
-        return phoneNumber;
     }
 }
 
