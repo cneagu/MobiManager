@@ -191,7 +191,7 @@
                             <td>Device Name</td>
                             <td>(no)</td>
                             <td>
-                                <a href="details.html" class="btn btn-secondary">
+                                <a href="details.html" class="btn btn-secondary" data-toggle="modal" data-target="#DeviceDetail">
                                     <i class="fa fa-angle-double-right"></i> Details
                                 </a>
                             </td>
@@ -479,6 +479,132 @@
         </div>
     </div>
 
+    <div class="modal fade text-dark" id="DeviceDetail">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-secondary text-white">
+                    <h5 class="modal-title" id="contactModalTitle">Device Details</h5>
+                    <button class="close" data-dismiss="modal"><span>&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="contactModalTitle">Name</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="container row">
+                                <h5>Device Name is: </h5>
+                                <h5 id="current-Device-Name"></h5>
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group form-group-sm">
+                            <label for="text">Edit device Name</label>
+                            <input name="details-device-name" id="details-device-name" class="form-control" placeholder="Edit Device Name">
+                        </div>
+                    </div>
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="contactModalTitle">Manufacturer</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="container row">
+                                <h5>Device Manufacturer is: </h5>
+                                <h5 id="current-Device-Manufacturer"></h5>
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group form-group-sm">
+                            <label for="Text">Edit device Manufacturer</label>
+                            <input name="details-device-manufacturer" id="details-device-manufacturer" class="form-control" placeholder="Edit Device Manufacturer">
+                        </div>
+                    </div>
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="contactModalTitle">Type</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="container row">
+                                <h5>Device Type is: </h5>
+                                <h5 id="current-Device-Type"></h5>
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group form-group-sm">
+                            <label for="Text">Edit device Type</label>
+                            <select name="details-device-type" class="form-control form-control-sm" id="details-device-type" required>
+                                <option value="" disabled selected>Select new type</option>
+                                <option value="0">Phone</option>
+                                <option value="1">Tablet</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="contactModalTitle">OperatingSystem</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="container row">
+                                <h5>Device OperatingSystem is: </h5>
+                                <h5 id="current-Device-OperatingSystem"></h5>
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group form-group-sm">
+                            <label for="Text">Edit device OperatingSystem</label>
+                            <input name="details-device-operatingSystem" id="details-device-operatingSystem" class="form-control" placeholder="Edit Device OperatingSystem">
+                        </div>
+                    </div>
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="contactModalTitle">OS Version</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="container row">
+                                <h5>Device OS Version is: </h5>
+                                <h5 id="current-Device-OSVersion"></h5>
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group form-group-sm">
+                            <label for="Text">Edit device OS Version</label>
+                            <input name="details-device-osVersion" id="details-device-osVersion" class="form-control" placeholder="Edit Device OS Version">
+                        </div>
+                    </div>
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="contactModalTitle">Processor</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="container row">
+                                <h5>Device Processor is: </h5>
+                                <h5 id="current-Device-Processor"></h5>
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group form-group-sm">
+                            <label for="Text">Edit device Processor</label>
+                            <input name="details-device-processor" id="details-device-processor" class="form-control" placeholder="Edit Device Processor">
+                        </div>
+                    </div>
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="contactModalTitle">RAM Amount</h5>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="container row">
+                                <h5>Device RAM Amount is: </h5>
+                                <h5 id="current-Device-RAMAmount"></h5>
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-group form-group-sm">
+                            <label for="Text">Edit device RAM Amount</label>
+                            <input name="details-device-ramAmount" id="details-device-ramAmount" class="form-control" placeholder="Edit Device RAMAmount">
+                        </div>
+                    </div>
+
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button class="btn btn-warning" id="update-device-details"><i class="fa fa-upload"></i>  Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
