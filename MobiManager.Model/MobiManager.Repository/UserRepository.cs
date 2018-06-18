@@ -60,6 +60,19 @@ namespace MobiManager.Repository
                 return new User();
         }
 
+        public User ReadUserName(string userName)
+        {
+            List<User> result = new List<User>();
+            SqlParameter[] parameters = { new SqlParameter("@UserName", userName) };
+            result = Read("dbo.Users_ReadUserName", parameters);
+            if (result.Count > 0)
+            {
+                return result[0];
+            }
+            else
+                return new User();
+        }
+
         protected override User GetModelFromReader(SqlDataReader reader)
         {
             User user = new User();

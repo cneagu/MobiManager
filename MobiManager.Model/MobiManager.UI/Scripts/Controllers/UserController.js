@@ -36,8 +36,6 @@
                 if (validate(userInput) == 1) {
                     function responseNewUser(data) {
                         alert('New account created!   now you can login :)');
-                    }
-                    function responseNewUserLocation(data) {
                         window.location.hash = '#home';
                     }
 

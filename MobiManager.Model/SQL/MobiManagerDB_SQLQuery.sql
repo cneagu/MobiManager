@@ -232,6 +232,18 @@ BEGIN
 END
 GO
 
+CREATE PROCEDURE dbo.Users_ReadUserName
+(
+@UserName nvarchar(50)
+)
+AS
+BEGIN
+	SELECT UserName
+	FROM	[Users]
+	WHERE	UserName = @UserName
+END
+GO
+
 CREATE PROCEDURE dbo.Devices_ReadByID
 (
 @DeviceID uniqueidentifier
