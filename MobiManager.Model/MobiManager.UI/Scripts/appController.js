@@ -4,7 +4,7 @@
 
     var _userController = new UserController(_serviceContext);
     _userController.LogIn();
-    _userController.Setings();
-    _userController.LogOut();
-    _userController.UserProfile();
+    //_userController.Setings();
+    //_userController.LogOut();
+    //_userController.UserProfile();
 });

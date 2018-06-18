@@ -108,10 +108,17 @@ function validateDigit(nb) {
         return 0;
     return nb;
 }
-function validationText(t) {
-    if (t == '' || t == undefined)
-        return '';
-    else return t;
+function validationText(text,id) {
+    if (!(/^[A-Za-z]*$/i.test(text)) || text == '' || text == undefined) {
+        $(id).addClass("is-invalid");
+        text = '';
+        return text;
+    }
+    else {
+        $(id).removeClass("is-invalid");
+        $(id).addClass("is-valid");
+        return text;
+    }
 }
 
 function validateCurentPassword(paswword) {
