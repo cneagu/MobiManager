@@ -53,6 +53,10 @@
       <Project>{e894ba62-9dde-4e6a-914c-eecfcffc849a}</Project>
       <Name>MobiManager.Business</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MobiManager.Model\MobiManager.Model.csproj">
+      <Project>{540C1AC2-D969-4D00-9343-9B6D19D39A36}</Project>
+      <Name>MobiManager.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
