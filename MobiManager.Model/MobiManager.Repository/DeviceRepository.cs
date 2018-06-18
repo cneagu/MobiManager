@@ -1,12 +1,13 @@
 ﻿using MobiManager.Model;
 using MobiManager.Repository.Core;
+using MobiManager.RepositoryAbstraction;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
 namespace MobiManager.Repository
 {
-    public class DeviceRepository : BaseRepository<Device>
+    public class DeviceRepository : BaseRepository<Device>, IDeviceRepository
     {
         #region Methdos
         public void Insert(Device device)

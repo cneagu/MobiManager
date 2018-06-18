@@ -1,24 +1,28 @@
-﻿using System;
+﻿using MobiManager.RepositoryAbstraction;
+using MobiManager.RepositoryAbstraction.Core;
+using System;
 
 namespace MobiManager.Repository.Core
 {
-    public class RepositoryContext : IDisposable
+    public class RepositoryContext : IRepositoryContext
     {
         #region Members
-        private static readonly RepositoryContext _instance = new RepositoryContext();
-        private UserRepository _userRepository;
-        private DeviceUserRepository _deviceUserRepository;
-        private DeviceRepository _deviceRepository;
-        private DeviceAssignationRepository _deviceAssignationRepository;
-
+        private static IRepositoryContext _instance;
+        private IUserRepository _userRepository;
+        private IDeviceUserRepository _deviceUserRepository;
+        private IDeviceRepository _deviceRepository;
+        private IDeviceAssignationRepository _deviceAssignationRepository;
         #endregion
 
         #region Constructor
-        public RepositoryContext() {}
+        public RepositoryContext()
+        {
+            _instance = this;
+        }
         #endregion
 
         #region Properties
-        public static RepositoryContext Current
+        internal static IRepositoryContext Current
         {
             get
             {
@@ -29,8 +33,8 @@ namespace MobiManager.Repository.Core
                 return _instance;
             }
         }
-
-        public UserRepository UserRepository
+        
+        public IUserRepository UserRepository
         {
             get
             {
@@ -40,7 +44,7 @@ namespace MobiManager.Repository.Core
             }
         }
 
-        public DeviceUserRepository DeviceUserRepository
+        public IDeviceUserRepository DeviceUserRepository
         {
             get
             {
@@ -50,7 +54,7 @@ namespace MobiManager.Repository.Core
             }
         }
 
-        public DeviceRepository DeviceRepository
+        public IDeviceRepository DeviceRepository
         {
             get
             {
@@ -60,7 +64,7 @@ namespace MobiManager.Repository.Core
             }
         }
 
-        public DeviceAssignationRepository DeviceAssignationRepository
+        public IDeviceAssignationRepository DeviceAssignationRepository
         {
             get
             {

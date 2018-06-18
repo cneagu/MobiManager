@@ -1,12 +1,13 @@
 ﻿using MobiManager.Model;
 using MobiManager.Repository.Core;
+using MobiManager.RepositoryAbstraction;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
 namespace MobiManager.Repository
 {
-    public class DeviceAssignationRepository : BaseRepository<DeviceAssignation>
+    public class DeviceAssignationRepository : BaseRepository<DeviceAssignation>, IDeviceAssignationRepository
     {
         #region Methdos
         public void SetUser(DeviceAssignation device)

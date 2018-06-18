@@ -14,7 +14,7 @@ namespace MobiManager.RepositoryAbstraction
         void Delete(Guid userID);
         List<User> ReadAll();
         User ReadByID(Guid userID);
-        User ReadUserName(string userName);
+        string ReadUserName(string userName);
         Guid ReadLogIn(string userName, string password);
     }
 }

@@ -58,6 +58,10 @@
       <Project>{540c1ac2-d969-4d00-9343-9b6d19d39a36}</Project>
       <Name>MobiManager.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MobiManager.RepositoryAbstraction\MobiManager.RepositoryAbstraction.csproj">
+      <Project>{273467F7-643E-4326-80A8-64C39B65AD0C}</Project>
+      <Name>MobiManager.RepositoryAbstraction</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
