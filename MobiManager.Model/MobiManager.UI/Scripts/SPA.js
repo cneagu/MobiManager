@@ -28,27 +28,12 @@
         navigate();
     });
 
-
-
     $(".singin-page").on("click", function () {
         window.location.hash = '#singin';
 
     });
 
-    $(".main-search").on("click", function () {
-        window.location.hash = '#search';
-    });
-
     $(".back-home").on("click", function () {
         window.history.back();
-    });
-
-
-    $("#user-announcements").on("click", function () {
-        $("#tabs").tabs({ active: 0 });
-    });
-
-    $("#user-messages").on("click", function () {
-        $("#tabs").tabs({ active: 1 });
     });
 }
