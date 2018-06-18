@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL", "SQL", "{B8FEABBC-455
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobiManager.RepositoryAbstraction", "MobiManager.RepositoryAbstraction\MobiManager.RepositoryAbstraction.csproj", "{273467F7-643E-4326-80A8-64C39B65AD0C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobiManager.RepositoryFactory", "MobiManager.RepositoryFactory\MobiManager.RepositoryFactory.csproj", "{006FD5F7-02BC-448F-B929-48412CE0A59C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{273467F7-643E-4326-80A8-64C39B65AD0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{273467F7-643E-4326-80A8-64C39B65AD0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{273467F7-643E-4326-80A8-64C39B65AD0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{006FD5F7-02BC-448F-B929-48412CE0A59C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{006FD5F7-02BC-448F-B929-48412CE0A59C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{006FD5F7-02BC-448F-B929-48412CE0A59C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{006FD5F7-02BC-448F-B929-48412CE0A59C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
