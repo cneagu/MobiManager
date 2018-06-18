@@ -74,6 +74,7 @@
     <Content Include="Resource\signin-page.jpeg" />
     <Content Include="Scripts\appController.js" />
     <Content Include="Scripts\Globals.js" />
+    <Content Include="Scripts\SPA.js" />
     <Content Include="Style\FooterStyle.css" />
     <Content Include="Style\Style.css" />
     <Content Include="Web.config" />
