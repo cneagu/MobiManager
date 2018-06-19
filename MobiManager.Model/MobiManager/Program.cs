@@ -15,11 +15,12 @@ namespace MobiManager
        
             using (BusinessContext context = new BusinessContext())
             {
-                List<User> rez =context.UserBusiness.ReadAll();
-                foreach(var item in rez)
-                {
-                    Console.WriteLine(item.LastName);
-                }
+                string rez = context.UserBusiness.ReadUserName("amanea");
+				//foreach(var item in rez)
+				//{
+				//    Console.WriteLine(item.LastName);
+				//}
+				Console.WriteLine(rez);
                 Console.ReadLine();
             }
         }

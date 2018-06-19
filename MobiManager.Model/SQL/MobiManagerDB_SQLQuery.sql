@@ -238,7 +238,14 @@ CREATE PROCEDURE dbo.Users_ReadUserName
 )
 AS
 BEGIN
-	SELECT UserName
+	SELECT [UserID],
+			FirstName,
+			LastName,
+			UserName,
+			[Password],
+			[Role],
+			CreationDate,
+			[Location]
 	FROM	[Users]
 	WHERE	UserName = @UserName
 END
