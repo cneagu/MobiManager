@@ -7,7 +7,7 @@ EXEC Users_Insert
 @FirstName = 'Neagu',
 @LastName = 'Cristian',
 @UserName = 'cneagu',
-@Password = 'mobi123',
+@Password = 'mobimanager123',
 @Role = 'CEO',
 @Location = 'Cluj';
 
@@ -16,7 +16,7 @@ EXEC Users_Insert
 @FirstName = 'Manea',
 @LastName = 'Andrei',
 @UserName = 'amanea',
-@Password = 'mobi123',
+@Password = 'mobimanager123',
 @Role = 'Software Developer',
 @Location = 'Cluj';
 
@@ -25,7 +25,7 @@ EXEC Users_Insert
 @FirstName = 'Pocol',
 @LastName = 'Florin',
 @UserName = 'fpocol',
-@Password = 'mobi123',
+@Password = 'mobimanager123',
 @Role = 'Software Developer',
 @Location = 'Alba';
 
@@ -34,7 +34,7 @@ EXEC Users_Insert
 @FirstName = 'Pop',
 @LastName = 'Denisa',
 @UserName = 'dpop',
-@Password = 'mobi123',
+@Password = 'mobimanager123',
 @Role = 'Human Resources Officer',
 @Location = 'Cluj';
 
@@ -43,7 +43,7 @@ EXEC Users_Insert
 @FirstName = 'Moldovan',
 @LastName = 'Maria',
 @UserName = 'mmaria',
-@Password = 'mobi123',
+@Password = 'mobimanager123',
 @Role = 'Project Manager',
 @Location = 'Cluj';
 
@@ -52,7 +52,7 @@ EXEC Users_Insert
 @FirstName = 'Groav',
 @LastName = 'Mircea',
 @UserName = 'mgrozav',
-@Password = 'mobi123',
+@Password = 'mobimanager123',
 @Role = 'Market Specialist',
 @Location = 'Zalau';
 
