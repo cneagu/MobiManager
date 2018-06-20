@@ -1,4 +1,5 @@
 ﻿using MobiManager.Business.Core;
+using MobiManager.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,17 @@ namespace MobiManager.API.Controllers
             using (BusinessContext context = new BusinessContext())
             {
                 return context.UserBusiness.ReadUserName(username);
+            }
+        }
+
+        [HttpPost]
+        [Route("LogIn/Insert")]
+        public void Insert(User user)
+        {
+            user.UserID = Guid.NewGuid();
+            using (BusinessContext context = new BusinessContext())
+            {
+                context.UserBusiness.Insert(user);
             }
         }
     }

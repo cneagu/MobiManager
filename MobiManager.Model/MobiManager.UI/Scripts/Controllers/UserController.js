@@ -44,7 +44,7 @@
                             if (userName == userInput.UserName)
                                 alert('This UserName already exists ' + 'UserName : ' + userName + ' ');
                         } else {
-                            console.log('success');
+                            serviceContext.UserService().Insert(userInput, responseNewUser)
                         }
 
                     }
