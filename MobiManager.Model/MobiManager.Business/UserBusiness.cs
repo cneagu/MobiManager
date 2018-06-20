@@ -40,6 +40,11 @@ namespace MobiManager.Business
         {
             return BusinessContext.Current.RepositoryContext.UserRepository.ReadUserName(userName);
         }
+
+        public Guid ReadLogIn(string userName, string password)
+        {
+            return BusinessContext.Current.RepositoryContext.UserRepository.ReadLogIn(userName, password);
+        }
         #endregion
     }
 }

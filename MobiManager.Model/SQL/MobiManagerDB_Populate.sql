@@ -1,5 +1,7 @@
 USE MobiManagerDB;
 
+--select * from Users;
+
 EXEC Users_Insert
 @UserID = 'd0befd26-867e-437a-ad82-c02b6c239590',
 @FirstName = 'Neagu',

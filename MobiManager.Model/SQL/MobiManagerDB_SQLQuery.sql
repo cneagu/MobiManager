@@ -258,7 +258,14 @@ CREATE PROCEDURE dbo.Users_ReadLogIn
 )
 AS
 BEGIN
-	SELECT  UserID			
+	SELECT  [UserID],
+			FirstName,
+			LastName,
+			UserName,
+			[Password],
+			[Role],
+			CreationDate,
+			[Location]			
 	FROM	[Users]
 	WHERE	UserName = @UserName AND
 			[Password] = @Password

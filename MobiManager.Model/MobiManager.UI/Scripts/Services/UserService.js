@@ -7,4 +7,12 @@
     this.Insert = function (data, handleData) {
         ajaxService('User/LogIn/Insert', 'POST', data, handleData, '#singin');
     };
+
+    this.ReadLogIn = function (data, handleData) {
+        ajaxService('User/LogIn/ReadLogIn', 'POST', data, handleData, '#singin');
+    };
+
+    this.ReadById = function (data, handleData) {
+        ajaxService('User/LogIn/ReadById/' + data, 'GET', '', handleData, '#singin');
+    };
 };
