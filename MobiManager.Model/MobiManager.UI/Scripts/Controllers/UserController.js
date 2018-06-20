@@ -41,8 +41,8 @@
 
                     function checkteUserData(userName) {
                         if (userName) {
-                            if (userName == userInput.username)
-                                alert('The field already exists ' + 'UserName : ' + userName + ' ');
+                            if (userName == userInput.UserName)
+                                alert('This UserName already exists ' + 'UserName : ' + userName + ' ');
                         } else {
                             console.log('success');
                         }

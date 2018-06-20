@@ -15,13 +15,14 @@ namespace MobiManager
        
             using (BusinessContext context = new BusinessContext())
             {
-                string rez = context.UserBusiness.ReadUserName("amanea");
-				//foreach(var item in rez)
+				var guid = new Guid("127e61cf-859c-4031-9a4e-33d465447ac0");
+                var rez = context.UserBusiness.ReadByID(guid);
+				//foreach (var item in rez)
 				//{
-				//    Console.WriteLine(item.LastName);
+					Console.WriteLine(rez.LastName);
 				//}
-				Console.WriteLine(rez);
-                Console.ReadLine();
+				//Console.WriteLine(rez);
+				Console.ReadLine();
             }
         }
     }
