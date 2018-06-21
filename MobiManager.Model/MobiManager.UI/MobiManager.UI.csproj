@@ -76,6 +76,7 @@
     <Content Include="Scripts\Controllers\DeviceController.js" />
     <Content Include="Scripts\Controllers\UserController.js" />
     <Content Include="Scripts\Globals.js" />
+    <Content Include="Scripts\Library\PopulateList.js" />
     <Content Include="Scripts\Library\ValidateData_lib.js" />
     <Content Include="Scripts\Services\AjaxService.js" />
     <Content Include="Scripts\Services\DeviceAssignationService.js" />

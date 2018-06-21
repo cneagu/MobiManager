@@ -14,7 +14,7 @@ namespace MobiManager.API.Controllers
     public class DeviceController : ApiController
     {
         [HttpGet]
-        [Route("ReadByID")]
+        [Route("ReadByID/{deviceID}")]
         public Device ReadByID(Guid deviceID)
         {
             using (BusinessContext context = new BusinessContext())
