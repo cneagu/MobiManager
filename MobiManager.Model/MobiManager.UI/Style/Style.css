@@ -52,3 +52,12 @@
 #user_profile{
     padding-top:50px;
 }
+
+.loader {
+	height: 700px;
+	background-size: cover;
+	background: url('https://loading.io/spinners/coolors/lg.palette-rotating-ring-loader.gif');
+	background-repeat: no-repeat;
+	background-position: center;
+	opacity: .8;
+}

@@ -94,4 +94,17 @@
                 alert('Incorect input!');
         });
     };
+
+    this.LogOut = function () {
+        $('#logOut').on('click', function () {
+            $('#user_menu').attr("hidden", "true");
+            $('#login-button').removeAttr('hidden');
+
+            //data-dismiss
+            CURENT_USER = [];
+            CURENT_LOCATION = [];
+            CURENT_ANNOUNCEMENTS = [];
+            CURENT_INBOX = [];
+        });
+    };
 };

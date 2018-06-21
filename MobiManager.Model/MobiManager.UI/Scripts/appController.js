@@ -5,6 +5,6 @@
     var _userController = new UserController(_serviceContext);
     _userController.SigIn();
     _userController.LogIn();
-    //_userController.LogOut();
+    _userController.LogOut();
     //_userController.UserProfile();
 });
