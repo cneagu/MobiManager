@@ -73,13 +73,13 @@
     <Content Include="Resource\main-page-info.jpeg" />
     <Content Include="Resource\signin-page.jpeg" />
     <Content Include="Scripts\appController.js" />
+    <Content Include="Scripts\Controllers\DeviceController.js" />
     <Content Include="Scripts\Controllers\UserController.js" />
     <Content Include="Scripts\Globals.js" />
     <Content Include="Scripts\Library\ValidateData_lib.js" />
     <Content Include="Scripts\Services\AjaxService.js" />
     <Content Include="Scripts\Services\DeviceAssignationService.js" />
     <Content Include="Scripts\Services\DeviceService.js" />
-    <Content Include="Scripts\Services\DeviceUserService.js" />
     <Content Include="Scripts\Services\ServiceContext.js" />
     <Content Include="Scripts\Services\UserService.js" />
     <Content Include="Scripts\SPA.js" />

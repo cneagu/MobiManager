@@ -19,12 +19,12 @@
     <script src="Scripts/Globals.js"></script>
     <script src="Scripts/Library/ValidateData_lib.js"></script>
     <script src="Scripts/Services/AjaxService.js"></script>
-    <script src="Scripts/Services/DeviceUserService.js"></script>
     <script src="Scripts/Services/DeviceAssignationService.js"></script>
     <script src="Scripts/Services/DeviceService.js"></script>
     <script src="Scripts/Services/UserService.js"></script>
     <script src="Scripts/Services/ServiceContext.js"></script>
     <script src="Scripts/Controllers/UserController.js"></script>
+    <script src="Scripts/Controllers/DeviceController.js"></script>
     <script src="Scripts/SPA.js"></script>
     <script src="Scripts/appController.js"></script>
 </head>
@@ -209,25 +209,8 @@
                             </th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <input id="checkBox" type="checkbox">
-                            </td>
-                            <td scope="row">1</td>
-                            <td>Device Name</td>
-                            <td>(no)</td>
-                            <td>
-                                <a data-guid="" href="details.html" class="btn btn-secondary" data-toggle="modal" data-target="#DeviceDetail">
-                                    <i class="fa fa-angle-double-right"></i> Details
-                                </a>
-                            </td>
-                            <td>
-                                <a href="details.html" class="btn btn-danger">
-                                    <i class="fa fa-trash"></i>
-                                </a>
-                            </td>
-                        </tr>
+                    <tbody id="devicesList">
+                        
 
                     </tbody>
                 </table>

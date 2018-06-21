@@ -65,6 +65,16 @@ namespace MobiManager.API.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("ReadAll")]
+        public List<User> ReadAll()
+        {
+            using (BusinessContext context = new BusinessContext())
+            {
+                return context.UserBusiness.ReadAll();
+            }
+        }
+
         [HttpPost]
         [Route("DevicesList")]
         public List<DeviceUser> DevicesList(User user)

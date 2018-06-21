@@ -8,4 +8,6 @@
     _userController.LogOut();
     _userController.Setings();
 
+    var _deviceController = new DeviceController(_serviceContext);
+    _deviceController.DeviceDetails();
 });
