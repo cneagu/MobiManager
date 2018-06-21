@@ -96,7 +96,7 @@
                 alert('Incorect input!');
         });
     };
-
+    //lg
     this.LogOut = function () {
         $('#logOut').on('click', function () {
             $('#user_menu').attr("hidden", "true");
