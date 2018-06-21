@@ -107,4 +107,11 @@
             CURENT_INBOX = [];
         });
     };
+
+    this.Setings = function () {
+        ('#setings').on('shown', function () {
+            // do something when the modal is shown
+            console.log('yess');
+        });
+    };
 };
