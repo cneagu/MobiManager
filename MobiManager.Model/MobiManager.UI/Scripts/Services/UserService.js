@@ -20,4 +20,9 @@
         ajaxService('User/LogIn/Update', 'POST', data, handleData, '#singin');
     };
     //read all
+
+    //deviceUser
+    this.DevicesList = function (data, handleData) {
+        ajaxService('User/DevicesList', 'POST', data, handleData, '#singin');
+    };
 };

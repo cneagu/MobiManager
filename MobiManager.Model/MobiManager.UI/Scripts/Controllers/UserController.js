@@ -87,9 +87,14 @@
                         alert('You are LogIn');
                         window.location.hash = '#user_profile';
                         serviceContext.UserService().ReadById(guid, UserReadByIdCallBack);
+                        serviceContext.UserService().DevicesList('', PopulateDeviceList)
                     }
                 }
                 serviceContext.UserService().ReadLogIn(logIn, LogInCallBack);
+
+                function PopulateDeviceList(data) {
+                    console.log(data);
+                }
             }
             else
                 alert('Incorect input!');

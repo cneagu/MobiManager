@@ -64,5 +64,15 @@ namespace MobiManager.API.Controllers
                 context.UserBusiness.Update(user);
             }
         }
+
+        [HttpPost]
+        [Route("DevicesList")]
+        public List<DeviceUser> DevicesList(User user)
+        {
+            using (BusinessContext context = new BusinessContext())
+            {
+                return context.DeviceUserBusiness.DevicesList();
+            }
+        }
     }
 }

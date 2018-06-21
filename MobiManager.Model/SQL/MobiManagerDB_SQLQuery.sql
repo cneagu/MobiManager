@@ -325,7 +325,7 @@ SELECT  d.DeviceID,
 			u.LastName
 	FROM	Devices d
 	INNER JOIN DevicesAssignation a ON a.DeviceID = d.DeviceID
-	LEFT JOIN Users u ON  u.UserID = a.UserID;
+	LEFT JOIN Users u ON  u.UserID = a.UserID
 END
 GO
 

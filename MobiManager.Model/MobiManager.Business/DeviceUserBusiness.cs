@@ -10,11 +10,11 @@ namespace MobiManager.Business
 {
     public class DeviceUserBusiness
     {
-		#region Methdos
-		public List<DeviceUser> DevicesList()
-		{
-			return BusinessContext.Current.RepositoryContext.DeviceUserRepository.DevicesList();
-		}
-			#endregion
-		}
+        #region Methdos
+        public List<DeviceUser> DevicesList()
+        {
+            return BusinessContext.Current.RepositoryContext.DeviceUserRepository.DevicesList();
+        }
+        #endregion
+    }
 }

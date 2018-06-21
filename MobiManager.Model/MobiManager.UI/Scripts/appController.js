@@ -6,5 +6,6 @@
     _userController.SigIn();
     _userController.LogIn();
     _userController.LogOut();
-    _userController.Setings ();
+    _userController.Setings();
+
 });
