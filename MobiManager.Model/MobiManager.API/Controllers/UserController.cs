@@ -54,5 +54,15 @@ namespace MobiManager.API.Controllers
                 return context.UserBusiness.ReadByID(userID);
             }
         }
+
+        [HttpPost]
+        [Route("LogIn/Update")]
+        public void Update(User user)
+        {
+            using (BusinessContext context = new BusinessContext())
+            {
+                context.UserBusiness.Update(user);
+            }
+        }
     }
 }

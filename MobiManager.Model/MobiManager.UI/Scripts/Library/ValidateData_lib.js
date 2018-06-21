@@ -119,3 +119,9 @@ function validateCurentPassword(paswword) {
         return paswword;
     return '';
 }
+function dataDismiss() {
+    CURENT_USER = [];
+    CURENT_LOCATION = [];
+    CURENT_ANNOUNCEMENTS = [];
+    CURENT_INBOX = [];
+}

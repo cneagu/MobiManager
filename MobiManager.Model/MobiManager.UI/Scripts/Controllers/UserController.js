@@ -1,25 +1,26 @@
 ﻿var UserController = function (serviceContext) {
-    var firstName = '';
-    $('#new-firstName').focusout(function () {
-        firstName = validationText($('#new-firstName').val(), '#new-firstName');
-    });
-    var lastName = '';
-    $('#new-lastName').focusout(function () {
-        lastName = validationText($('#new-lastName').val(), '#new-lastName');
-    });
-    var userName = '';
-    $('#new-userName').focusout(function () {
-        userName = validateUsername($('#new-userName').val(), '#new-userName');
-    });
-    var password = '';
-    $('#new-password').focusout(function () {
-        password = validatePassword($('#new-password').val(), '#new-password');
-    });
-    var cPassword = $('#new-c-password').focusout(function () {
-        cPassword = validaterePassword($('#new-c-password').val(), password, '#new-c-password');
-    });
-
+    
     this.SigIn = function () {
+        var firstName = '';
+        $('#new-firstName').focusout(function () {
+            firstName = validationText($('#new-firstName').val(), '#new-firstName');
+        });
+        var lastName = '';
+        $('#new-lastName').focusout(function () {
+            lastName = validationText($('#new-lastName').val(), '#new-lastName');
+        });
+        var userName = '';
+        $('#new-userName').focusout(function () {
+            userName = validateUsername($('#new-userName').val(), '#new-userName');
+        });
+        var password = '';
+        $('#new-password').focusout(function () {
+            password = validatePassword($('#new-password').val(), '#new-password');
+        });
+        var cPassword = $('#new-c-password').focusout(function () {
+            cPassword = validaterePassword($('#new-c-password').val(), password, '#new-c-password');
+        });
+
         $('#singIn').on('click', function () {
             var role = dropdownValidate($('#new-role').val(), '#new-role');
             var location = dropdownValidate($('#new-location').val(), '#new-location');
@@ -52,18 +53,18 @@
                 }
             }
         });
-    };
-
-    var luserName = '';
-    $('#username').focusout(function () {
-        luserName = validateUsername($('#username').val(), '#username');
-    });
-    var lpassword = '';
-    $('#password').focusout(function () {
-        lpassword = validatePassword($('#password').val(), '#password');
-    });
+    };   
 
     this.LogIn = function () {
+        var luserName = '';
+        $('#username').focusout(function () {
+            luserName = validateUsername($('#username').val(), '#username');
+        });
+        var lpassword = '';
+        $('#password').focusout(function () {
+            lpassword = validatePassword($('#password').val(), '#password');
+        });
+
         $('#logIn').on('click', function () {
             if (luserName !== '' && lpassword !== '') {
                 var logIn = {
@@ -100,18 +101,72 @@
             $('#user_menu').attr("hidden", "true");
             $('#login-button').removeAttr('hidden');
 
-            //data-dismiss
-            CURENT_USER = [];
-            CURENT_LOCATION = [];
-            CURENT_ANNOUNCEMENTS = [];
-            CURENT_INBOX = [];
+            dataDismiss();
+            
         });
     };
 
     this.Setings = function () {
-        ('#setings').on('shown', function () {
-            // do something when the modal is shown
-            console.log('yess');
+      
+        $('.setings').on('click', function () {
+            $(".current-setings").html('');
+            $("#current-FirstName").html(CURENT_USER.FirstName);
+            $("#current-LastName").html(CURENT_USER.LastName);
+            $("#current-UserName").html(CURENT_USER.UserName);
+            $("#current-Role").html(CURENT_USER.Role);
+            $("#current-Location").html(CURENT_USER.Location);
+        });
+
+        var firstName = '';
+        $('#new-seting-firstName').focusout(function () {
+            firstName = validationText($('#new-seting-firstName').val(), '#new-seting-firstName');
+        });
+        var lastName = '';
+        $('#new-seting-LastName').focusout(function () {
+            lastName = validationText($('#new-seting-LastName').val(), '#new-seting-LastName');
+        });
+        var userName = '';
+        $('#new-seting-username').focusout(function () {
+            userName = validateUsername($('#new-seting-username').val(), '#new-seting-username');
+        });
+        var nPassword = '';
+        $('#new-seting-new-password').focusout(function () {
+            nPassword = validatePassword($('#new-seting-new-password').val(), '#new-seting-new-password');
+        });
+        var cPassword = $('#new-seting-new-cpassword').focusout(function () {
+            cPassword = validaterePassword($('#new-seting-new-cpassword').val(), nPassword, '#new-seting-new-cpassword');
+        });
+
+        $('#update-setings').on('click', function () {
+            var password = validateCurentPassword($('#new-seting-curent-password').val());
+            var role = dropdownValidate($('#new-seting-role').val(), '#new-seting-role');
+            var location = dropdownValidate($('#new-seting-location').val(), '#new-seting-location');
+
+            if (password !== '' && nPassword === cPassword) {
+                var user = {
+                    UserID: CURENT_USER.UserID,
+                    FirstName: firstName,
+                    LastName: lastName,
+                    UserName: userName,
+                    Password: password,
+                    Role: role,
+                    Location: location
+                };
+
+                if (validate(user) == 1) {
+                    serviceContext.UserService().Update(user, callBack);
+                }
+            }
+            else {
+                alert('incorect password');
+            }
+            function callBack(data) {
+                alert('Success! You need to Log In again');
+                $('#user_menu').attr("hidden", "true");
+                $('#login-button').removeAttr('hidden');
+
+                dataDismiss();
+            }
         });
     };
 };

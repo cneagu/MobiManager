@@ -15,5 +15,9 @@
     this.ReadById = function (data, handleData) {
         ajaxService('User/LogIn/ReadById/' + data, 'GET', '', handleData, '#singin');
     };
+
+    this.Update = function (data, handleData) {
+        ajaxService('User/LogIn/Update', 'POST', data, handleData, '#singin');
+    };
     //read all
 };
