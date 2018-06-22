@@ -43,5 +43,15 @@ namespace MobiManager.API.Controllers
 				context.DeviceBusiness.Update(device);
 			}
 		}
+
+		[HttpPost]
+		[Route("Delete")]
+		public void Delete(Guid deviceID)
+		{
+			using (BusinessContext context = new BusinessContext())
+			{
+				context.DeviceBusiness.Delete(deviceID);
+			}
+		}
 	}
 }

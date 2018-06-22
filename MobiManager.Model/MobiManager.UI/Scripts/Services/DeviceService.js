@@ -11,4 +11,8 @@
     this.Update = function(data, handleData) {
         ajaxService('Device/Update', 'POST', data, handleData, '#user_profile');
     };
+
+    this.Delete = function (data, handleData) {
+        ajaxService('Device/Delete', 'POST', data, handleData, '#user_profile');
+    };
 };

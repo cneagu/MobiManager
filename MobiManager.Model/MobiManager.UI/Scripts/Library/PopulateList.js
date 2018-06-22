@@ -15,7 +15,7 @@
             '</a>' +
             '</td>' +
             '<td>' +
-            ' <a href="details.html" class="btn btn-danger">' +
+            ' <a data-guid="' + devices[i].DeviceID + '" href="details.html" class="btn btn-danger deviceDelete">' +
             '<i class="fa fa-trash"></i>' +
             '</a>' +
             '</td>' +

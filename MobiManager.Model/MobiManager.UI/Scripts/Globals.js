@@ -1,3 +1,4 @@
 ﻿var CURENT_USER = [];
 var CURENT_Device = [];
-var CURENT_DeviceList = [];
+var CURENT_FreeDeviceList = [];
+var CURENT_UserList = [];

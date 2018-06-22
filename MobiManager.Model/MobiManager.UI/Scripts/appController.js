@@ -11,4 +11,6 @@
     var _deviceController = new DeviceController(_serviceContext);
     _deviceController.DeviceDetails();
     _deviceController.DeviceUpdate();
+    _deviceController.DeviceDelete();
+    _deviceController.NewDevice();
 });

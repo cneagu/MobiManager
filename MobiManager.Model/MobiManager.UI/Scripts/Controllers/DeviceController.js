@@ -36,6 +36,12 @@
         });
     };
 
+    function DeviceSuccessInsert(data) {
+        $("#addNewDevice .close").click();
+        alert('create successful');
+        serviceContext.UserService().DevicesList('', PopulateDeviceList);
+    }
+
     this.DeviceUpdate = function () {
         $('#update-device-details').on('click', function () {
             var device = {
@@ -64,7 +70,55 @@
                         Processor: device.Processor,
                         RAMAmount: device.RAMAmount
                     }
-                    serviceContext.DeviceService().Update(deviceOK, DeviceSuccessUpdate);
+                    serviceContext.DeviceService().Update(deviceOK, DeviceSuccessInsert);
+
+                }
+            }
+        });
+    }
+
+    function DeleteDevice(data) {
+        alert('success delete');
+        serviceContext.UserService().DevicesList('', PopulateDeviceList);
+    }
+
+    this.DeviceDelete = function () {
+        $('#profile').on('click', '.deviceDetail', function () {
+            var deviceID = $(this).data('guid');
+
+            serviceContext.DeviceService().Delete(deviceID, DeleteDevice);
+        });
+    }
+
+    this.NewDevice = function () {
+        $('#new-device').on('click', function () {
+            var device = {
+              
+                Name: $('#new-name').val(),
+                Manufacturer: $('#new-manufacturer').val(),
+
+                OperatingSystem: $('#new-operatingSystem').val(),
+                OSVersion: $('#new-osVersion').val(),
+                Processor: $('#new-processor').val(),
+                RAMAmount: validateDigit($('#new-ramAmount').val())
+            }
+            var Type = $('#new-type').val();
+            if (Type == null) {
+                alert('select type');
+            }
+            else {
+                if (validate(device) == 1) {
+                    var deviceOK = {
+                        DeviceID: device.DeviceID,
+                        Name: device.Name,
+                        Manufacturer: device.Manufacturer,
+                        Type: Type,
+                        OperatingSystem: device.OperatingSystem,
+                        OSVersion: device.OSVersion,
+                        Processor: device.Processor,
+                        RAMAmount: device.RAMAmount
+                    }
+                    serviceContext.DeviceService().Insert(deviceOK, DeviceSuccessUpdate);
 
                 }
             }
