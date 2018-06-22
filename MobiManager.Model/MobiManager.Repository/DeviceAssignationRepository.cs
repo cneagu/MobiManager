@@ -35,24 +35,24 @@ namespace MobiManager.Repository
             return Read("dbo.DevicesAssignation_FreeDevices");
         }
 
-        public DeviceAssignation ReadByID(Guid deviceID)
+        public List<DeviceAssignation> ReadByID(Guid deviceID)
         {
             List<DeviceAssignation> result = new List<DeviceAssignation>();
             SqlParameter[] parameters = { new SqlParameter("@DeviceID", deviceID) };
             result = Read("dbo.DevicesAssignation_ReadByID", parameters);
             if (result.Count > 0)
             {
-                return result[0];
+                return result;
             }
             else
-                return new DeviceAssignation();
+                return new List<DeviceAssignation>();
         }
 
         protected override DeviceAssignation GetModelFromReader(SqlDataReader reader)
         {
             DeviceAssignation device = new DeviceAssignation();
             device.DeviceID = reader.GetGuid(reader.GetOrdinal("DeviceID"));
-            device.UserID = reader.GetGuid(reader.GetOrdinal("UserID"));
+            device.UserID = reader.IsDBNull(1) != true ? reader.GetGuid(reader.GetOrdinal("UserID")) : Guid.Empty;
             return (device);
         }
         #endregion

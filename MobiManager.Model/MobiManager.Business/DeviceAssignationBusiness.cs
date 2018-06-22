@@ -10,31 +10,31 @@ namespace MobiManager.Business
 {
     public class DeviceAssignationBusiness
     {
-		#region Methdos
-		public void SetUser(DeviceAssignation device)
-		{
-			BusinessContext.Current.RepositoryContext.DeviceAssignationRepository.SetUser(device);
-		}
+        #region Methdos
+        public void SetUser(DeviceAssignation device)
+        {
+            BusinessContext.Current.RepositoryContext.DeviceAssignationRepository.SetUser(device);
+        }
 
-		public void RemoveUser(Guid deviceID)
-		{
-			BusinessContext.Current.RepositoryContext.DeviceAssignationRepository.RemoveUser(deviceID);
-		}
+        public void RemoveUser(Guid deviceID)
+        {
+            BusinessContext.Current.RepositoryContext.DeviceAssignationRepository.RemoveUser(deviceID);
+        }
 
-		public List<DeviceAssignation> ReadAll()
-		{
-			return BusinessContext.Current.RepositoryContext.DeviceAssignationRepository.ReadAll();
-		}
+        public List<DeviceAssignation> ReadAll()
+        {
+            return BusinessContext.Current.RepositoryContext.DeviceAssignationRepository.ReadAll();
+        }
 
-		public List<DeviceAssignation> GetFreeDevice()
-		{
-			return BusinessContext.Current.RepositoryContext.DeviceAssignationRepository.GetFreeDevice();
-		}
+        public List<DeviceAssignation> GetFreeDevice()
+        {
+            return BusinessContext.Current.RepositoryContext.DeviceAssignationRepository.GetFreeDevice();
+        }
 
-		public DeviceAssignation ReadByID(Guid deviceID)
-		{
-			return BusinessContext.Current.RepositoryContext.DeviceAssignationRepository.ReadByID(deviceID);
-		}
-			#endregion
-		}
+        public List<DeviceAssignation> ReadByID(Guid deviceID)
+        {
+            return BusinessContext.Current.RepositoryContext.DeviceAssignationRepository.ReadByID(deviceID);
+        }
+            #endregion
+        }
 }

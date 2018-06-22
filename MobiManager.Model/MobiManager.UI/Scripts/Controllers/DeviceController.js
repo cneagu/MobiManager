@@ -1,6 +1,6 @@
 ﻿var DeviceController = function (serviceContext) {
 
-    $('.close').on('click', function (e) {
+    $('#addNewDevice').on('shown', function (e) {
         $(this)
             .find("input,textarea,select")
             .val('')
@@ -38,8 +38,9 @@
     };
 
     function DeviceSuccessInsert(data) {
-        $("#addNewDevice .close").click();
         alert('create successful');
+        $("#addNewDevice .close").click();
+
         serviceContext.UserService().DevicesList('', PopulateDeviceList);
     }
 

@@ -23,3 +23,8 @@
         $('#devicesList').append(str);
     }
 }
+
+function PopulateUserList(data) {
+    CURENT_UserList = data;
+    console.log(CURENT_UserList);
+}

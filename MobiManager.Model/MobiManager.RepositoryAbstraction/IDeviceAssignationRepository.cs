@@ -13,6 +13,6 @@ namespace MobiManager.RepositoryAbstraction
         void RemoveUser(Guid deviceID);
         List<DeviceAssignation> ReadAll();
         List<DeviceAssignation> GetFreeDevice();
-        DeviceAssignation ReadByID(Guid deviceID);
+        List<DeviceAssignation> ReadByID(Guid deviceID);
     }
 }

@@ -9,51 +9,48 @@ using System.Web.Http.Cors;
 
 namespace MobiManager.API.Controllers
 {
-    [RoutePrefix("api/Device")]
+    [RoutePrefix("api/DeviceAssignation")]
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    public class DeviceController : ApiController
+    public class DeviceAssignationController : ApiController
     {
+        [HttpPost]
+        [Route("SetUser")]
+        public void SetUser(DeviceAssignation deviceAssignation)
+        {
+            using (BusinessContext context = new BusinessContext())
+            {
+                 context.DeviceAssignationBusiness.SetUser(deviceAssignation);
+            }
+        }
+
+        [HttpPost]
+        [Route("RemoveUser")]
+        public void RemoveUser(Guid deviceID)
+        {
+            using (BusinessContext context = new BusinessContext())
+            {
+                context.DeviceAssignationBusiness.RemoveUser(deviceID);
+            }
+        }
+
+        [HttpGet]
+        [Route("GetFreeDevice")]
+        public List<DeviceAssignation> GetFreeDevice()
+        {
+            using (BusinessContext context = new BusinessContext())
+            {
+                return context.DeviceAssignationBusiness.GetFreeDevice();
+            }
+        }
+
         [HttpGet]
         [Route("ReadByID/{deviceID}")]
-        public Device ReadByID(Guid deviceID)
+        public List<DeviceAssignation> ReadByID(Guid deviceID)
         {
             using (BusinessContext context = new BusinessContext())
             {
-                return context.DeviceBusiness.ReadByID(deviceID);
+                return context.DeviceAssignationBusiness.ReadByID(deviceID);
             }
         }
-
-        [HttpPost]
-        [Route("Insert")]
-        public void Insert(Device device)
-        {
-            device.DeviceID = Guid.NewGuid();
-            using (BusinessContext context = new BusinessContext())
-            {
-                context.DeviceBusiness.Insert(device);
-            }
-        }
-
-        [HttpGet]
-        [Route("Delete/{deviceID}")]
-        public void Delete(Guid deviceID)
-        {
-            using (BusinessContext context = new BusinessContext())
-            {
-                context.DeviceBusiness.Delete(deviceID);
-            }
-        }
-
-        [HttpPost]
-        [Route("Update")]
-        public void Update(Device device)
-        {
-            using (BusinessContext context = new BusinessContext())
-            {
-                context.DeviceBusiness.Update(device);
-            }
-        }
-
-        
     }
 }

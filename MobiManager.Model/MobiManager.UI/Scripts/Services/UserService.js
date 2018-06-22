@@ -21,6 +21,10 @@
     };
     //read all
 
+    this.ReadAll = function (data, handleData) {
+        ajaxService('User/ReadAll', 'GET', '', handleData, '#singin');
+    };
+
     //deviceUser
     this.DevicesList = function (data, handleData) {
         ajaxService('User/DevicesList', 'POST', data, handleData, '#singin');

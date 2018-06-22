@@ -79,6 +79,8 @@
                     $('#head-userName').html("<i class='fa fa-user'></i>  " + user.UserName);
                 }
 
+                
+
                 function LogInCallBack(guid) {
                     if (guid == '00000000-0000-0000-0000-000000000000') {
                         alert("Account doesn't exist");
@@ -88,6 +90,7 @@
                         window.location.hash = '#user_profile';
                         serviceContext.UserService().ReadById(guid, UserReadByIdCallBack);
                         serviceContext.UserService().DevicesList('', PopulateDeviceList);
+                        serviceContext.UserService().ReadAll('', PopulateUserList);
                         //
                     }
                 }

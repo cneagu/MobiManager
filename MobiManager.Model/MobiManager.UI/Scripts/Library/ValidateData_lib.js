@@ -125,5 +125,3 @@ function dataDismiss() {
     CURENT_ANNOUNCEMENTS = [];
     CURENT_INBOX = [];
 }
-
-
