@@ -45,8 +45,8 @@ namespace MobiManager.API.Controllers
 		}
 
 		[HttpPost]
-		[Route("Delete")]
-		public void Delete(Guid deviceID)
+		[Route("Delete2")]
+		public void Delete2(Guid deviceID)
 		{
 			using (BusinessContext context = new BusinessContext())
 			{

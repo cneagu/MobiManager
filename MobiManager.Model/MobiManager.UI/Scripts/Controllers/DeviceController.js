@@ -9,6 +9,7 @@
             .prop("checked", "")
             .end();
     });
+
     function populateDeviceDetail(data) {
         CURENT_Device = [];
         CURENT_Device = data;
@@ -83,8 +84,9 @@
     }
 
     this.DeviceDelete = function () {
-        $('#profile').on('click', '.deviceDetail', function () {
+        $('#profile').on('click', '.deviceDelete', function () {
             var deviceID = $(this).data('guid');
+            console.log(deviceID);
 
             serviceContext.DeviceService().Delete(deviceID, DeleteDevice);
         });
