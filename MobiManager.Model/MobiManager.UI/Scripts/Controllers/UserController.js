@@ -91,6 +91,7 @@
                         serviceContext.UserService().ReadById(guid, UserReadByIdCallBack);
                         serviceContext.UserService().DevicesList('', PopulateDeviceList);
                         serviceContext.UserService().ReadAll('', PopulateUserList);
+                        serviceContext.DeviceAssignationService().GetFreeDevice('', PopulateFreeDeviceList);
                         //
                     }
                 }
