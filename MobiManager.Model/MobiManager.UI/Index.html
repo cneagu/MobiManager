@@ -160,7 +160,7 @@
         </header>
     </div>
 
-     <div id="user_profile" class="page-content" hidden>
+    <div id="user_profile" class="page-content" hidden>
         <header id="main-header" class="py-2 bg-dark text-white">
             <div class="container">
                 <div class="row">
@@ -183,6 +183,11 @@
                     <div class="col-md-2">
                         <a href="#" class="btn btn-success btn-block" data-toggle="modal" data-target="#assingDevice">
                             <i class="fa fa-id-badge"></i>  Assign Device
+                        </a>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="#" class="btn btn-success btn-block" data-toggle="modal" data-target="#unAssingDevice">
+                            <i class="fa fa-id-badge"></i>  UnAssign Device
                         </a>
                     </div>
                     <div class="col-md-2">
@@ -211,9 +216,7 @@
                             </th>
                         </tr>
                     </thead>
-                    <tbody id="devicesList">
-
-                    </tbody>
+                    <tbody id="devicesList"></tbody>
                 </table>
                 <nav class="ml-4">
                     <ul class="pagination">
@@ -508,6 +511,43 @@
                 <div class="modal-footer justify-content-between">
                     <button type="button" class="btn btn-secondary close" data-dismiss="modal">Cancel</button>
                     <button class="btn btn-success " id="assign-device"><i class="fa fa-upload"></i>  Assign</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade text-dark" id="unAssingDevice">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-secondary text-white">
+                    <h5 class="modal-title" id="contactModalTitle">UnAssing a Device</h5>
+                    <button class="close" data-dismiss="modal"><span>&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="container row">
+                                <h5>Your UsserName is: </h5>
+                                <h5 id="current-FirstName"></h5>
+                            </div>
+                        </div>
+                        <div class="col-md-4 form-group form-group-sm">
+                            <label for="new-userAssign">User</label>
+                            <select name="unAssign-user" class="form-control form-control-sm" id="unAssign-user" required>
+                                <option value="" disabled selected>Select user</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 form-group form-group-sm">
+                            <label for="new-deviceAssign">Device</label>
+                            <select name="unAssign-device" class="form-control form-control-sm" id="unAssign-device" required>
+                                <option value="" disabled selected>Select device</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-secondary close" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-success " id="unAssign-device"><i class="fa fa-upload"></i>  Assign</button>
                 </div>
             </div>
         </div>
