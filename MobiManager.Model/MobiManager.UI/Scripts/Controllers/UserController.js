@@ -87,7 +87,8 @@
                         alert('You are LogIn');
                         window.location.hash = '#user_profile';
                         serviceContext.UserService().ReadById(guid, UserReadByIdCallBack);
-                        serviceContext.UserService().DevicesList('', PopulateDeviceList)
+                        serviceContext.UserService().DevicesList('', PopulateDeviceList);
+                        //
                     }
                 }
                 serviceContext.UserService().ReadLogIn(logIn, LogInCallBack);
@@ -96,7 +97,6 @@
                 alert('Incorect input!');
         });
     };
-    //lg
     this.LogOut = function () {
         $('#logOut').on('click', function () {
             $('#user_menu').attr("hidden", "true");

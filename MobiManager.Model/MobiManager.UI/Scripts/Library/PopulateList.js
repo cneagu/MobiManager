@@ -1,6 +1,8 @@
 ﻿function PopulateDeviceList(devices) {
+    $("#devicesList .toRemove").remove();
+
     for (var i in devices) {
-        var str = "<tr>" +
+        var str = "<tr class='toRemove'>" +
             "<td>" +
             '<input id="checkBox" type="checkbox">' +
             '</td>' +

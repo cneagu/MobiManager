@@ -23,14 +23,25 @@ namespace MobiManager.API.Controllers
             }
         }
 
-        //[HttpPost]
-        //[Route("DevicesList")]
-        //public List<DeviceUser> DevicesList(User user)
-        //{
-        //    using (BusinessContext context = new BusinessContext())
-        //    {
-        //        return context.DeviceUserBusiness.DevicesList();
-        //    }
-        //}
-    }
+		[HttpPost]
+		[Route("Insert")]
+		public void Insert(Device device)
+		{
+			device.DeviceID = Guid.NewGuid();
+			using (BusinessContext context = new BusinessContext())
+			{
+				context.DeviceBusiness.Insert(device);
+			}
+		}
+
+		[HttpPost]
+		[Route("Update")]
+		public void Update(Device device)
+		{
+			using (BusinessContext context = new BusinessContext())
+			{
+				context.DeviceBusiness.Update(device);
+			}
+		}
+	}
 }
