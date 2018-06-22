@@ -12,6 +12,6 @@
     };
 
     this.ReadByID = function (data, handleData) {
-        ajaxService('DeviceAssignation/ReadByID/' + id, 'GET', '', handleData, '#singin');
+        ajaxService('DeviceAssignation/ReadByID/' + data, 'GET', '', handleData, '#singin');
     };
 };

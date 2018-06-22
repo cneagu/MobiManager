@@ -293,14 +293,14 @@ GO
 
 CREATE PROCEDURE dbo.DevicesAssignation_ReadByID
 (
-@DeviceID uniqueidentifier
+@UserID uniqueidentifier
 )
 AS
 BEGIN
 	SELECT  DeviceID,
 			UserID
 	FROM	DevicesAssignation
-	WHERE	DeviceID = @DeviceID
+	WHERE	UserID = @UserID
 END
 GO
 

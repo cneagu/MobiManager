@@ -38,7 +38,7 @@ namespace MobiManager.Repository
         public List<DeviceAssignation> ReadByID(Guid deviceID)
         {
             List<DeviceAssignation> result = new List<DeviceAssignation>();
-            SqlParameter[] parameters = { new SqlParameter("@DeviceID", deviceID) };
+            SqlParameter[] parameters = { new SqlParameter("@UserID", deviceID) };
             result = Read("dbo.DevicesAssignation_ReadByID", parameters);
             if (result.Count > 0)
             {
