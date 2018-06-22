@@ -91,8 +91,8 @@
                         serviceContext.UserService().ReadById(guid, UserReadByIdCallBack);
                         serviceContext.UserService().DevicesList('', PopulateDeviceList);
                         serviceContext.UserService().ReadAll('', PopulateUserList);
-                        //serviceContext.DeviceAssignationService().GetFreeDevice('', PopulateFreeDeviceList);
-                        serviceContext.DeviceAssignationService().ReadByID('D172D559-8E4B-4F28-B603-4D38CD659028', PopulateFreeDeviceList);
+                        serviceContext.DeviceAssignationService().GetFreeDevice('', PopulateFreeDeviceList);
+                        serviceContext.DeviceAssignationService().ReadByID(guid, PopulateDeviceAssignList);
                         //
                     }
                 }

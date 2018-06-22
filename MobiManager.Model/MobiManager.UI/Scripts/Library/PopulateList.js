@@ -26,10 +26,12 @@
 
 function PopulateUserList(data) {
     CURENT_UserList = data;
-    console.log(CURENT_UserList);
 }
 
 function PopulateFreeDeviceList(data) {
     CURENT_FreeDeviceList = data;
-    console.log(CURENT_FreeDeviceList);
+}
+
+function PopulateDeviceAssignList(data) {
+    CRENT_UserDeviceList = data;
 }

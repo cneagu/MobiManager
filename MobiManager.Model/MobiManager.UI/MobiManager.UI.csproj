@@ -73,6 +73,7 @@
     <Content Include="Resource\main-page-info.jpeg" />
     <Content Include="Resource\signin-page.jpeg" />
     <Content Include="Scripts\appController.js" />
+    <Content Include="Scripts\Controllers\DeviceAssignationController.js" />
     <Content Include="Scripts\Controllers\DeviceController.js" />
     <Content Include="Scripts\Controllers\UserController.js" />
     <Content Include="Scripts\Globals.js" />

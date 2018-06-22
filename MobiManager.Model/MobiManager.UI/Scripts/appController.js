@@ -13,4 +13,8 @@
     _deviceController.DeviceUpdate();
     _deviceController.DeviceDelete();
     _deviceController.NewDevice();
+
+    var _deviceAssignationController = new DeviceAssignationController(_serviceContext);
+    _deviceAssignationController.Assignation();
+    _deviceAssignationController.UnAssignation();
 });
