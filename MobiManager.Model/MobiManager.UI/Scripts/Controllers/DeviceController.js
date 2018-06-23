@@ -42,6 +42,7 @@
         $("#addNewDevice .close").click();
 
         serviceContext.UserService().DevicesList('', PopulateDeviceList);
+        serviceContext.DeviceAssignationService().GetFreeDevice('', PopulateFreeDeviceList);
     }
 
     this.DeviceUpdate = function () {

@@ -19,6 +19,7 @@
 
         function DeviceAssignationCallback(data) {
             alert('Device assign');
+            $("#assingDevice .close").click();
             serviceContext.UserService().DevicesList('', PopulateDeviceList);
             serviceContext.DeviceAssignationService().GetFreeDevice('', PopulateFreeDeviceList);
             serviceContext.DeviceAssignationService().ReadByID(CURENT_USER.UserID, PopulateDeviceAssignList);
