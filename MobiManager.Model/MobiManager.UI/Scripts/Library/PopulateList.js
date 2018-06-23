@@ -1,4 +1,5 @@
 ﻿function PopulateDeviceList(devices) {
+    CURRENT_AllDevice = devices;
     $("#devicesList .toRemove").remove();
 
     for (var i in devices) {
