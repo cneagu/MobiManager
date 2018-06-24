@@ -21,8 +21,7 @@
                 Processor: $('#details-device-processor').val() == '' ? CURENT_Device.Processor : $('#details-device-processor').val(),
                 RAMAmount: $('#details-device-ramAmount').val() == '' ? CURENT_Device.RAMAmount : $('#details-device-ramAmount').val()
             }
-            var Type = $('#details-device-type').val();
-            if (validateDigit($('#details-device-ramAmount').val()) == 0) {
+            if (validateDigit(device.RAMAmount) == 0) {
                 alert('invalid Ram');
             }
             else {
@@ -34,8 +33,6 @@
     this.DeviceDelete = function () {
         $('#profile').on('click', '.deviceDelete', function () {
             var deviceID = $(this).data('guid');
-            console.log(deviceID);
-
             serviceContext.DeviceService().Delete(deviceID, DeleteDevice);
         });
     }
