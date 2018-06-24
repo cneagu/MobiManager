@@ -36,3 +36,20 @@ function PopulateFreeDeviceList(data) {
 function PopulateDeviceAssignList(data) {
     CRENT_UserDeviceList = data;
 }
+
+function populateUnasignDeviceDropdown(data) {
+    CURRENT_AssignDevice = data;
+    $('#unAssign-device-op').children().remove();
+    var k = 0;
+    for (var i in CURRENT_AssignDevice) {
+        for (var j in CURRENT_AllDevice) {
+            if (CURRENT_AssignDevice[i].DeviceID === CURRENT_AllDevice[j].DeviceID) {
+                $('#unAssign-device-op').append("<option value='" + CURRENT_AssignDevice[i].DeviceID + "'>" + CURRENT_AllDevice[j].Name + "</option>");
+                k++;
+            }
+        }
+    }
+    if (k == 0) {
+        $('#unAssign-device-op').append("<option value='" + '' + "'>" + 'No Device Assign' + "</option>");
+    }
+}

@@ -12,7 +12,7 @@
             for (var i in CURENT_FreeDeviceList) {
                 for (var j in CURRENT_AllDevice) {
                     if (CURENT_FreeDeviceList[i].DeviceID == CURRENT_AllDevice[j].DeviceID)
-                        $('#assign-device-op').append("<option value='" + CURENT_FreeDeviceList[i].DeviceID + "'>" + CURRENT_AllDevice[i].Name + "</option>");
+                        $('#assign-device-op').append("<option value='" + CURENT_FreeDeviceList[i].DeviceID + "'>" + CURRENT_AllDevice[j].Name + "</option>");
                 }
             }
         });
@@ -38,6 +38,22 @@
     };
 
     this.UnAssignation = function () {
-        //unAssingDevice
+        $('#unAssingDeviceModal').on('click', function () {
+            $('#current-unassign-UserName').html(CURENT_USER.UserName);
+            $('#unAssign-user-op').children().remove();
+            for (var i in CURENT_UserList) {
+                $('#unAssign-user-op').append("<option value='" + CURENT_UserList[i].UserID + "'>" + CURENT_UserList[i].UserName + "</option>");
+            }
+        });
+
+        $("#unAssign-user-op").change(function () {
+            $('#unAssign-device-op').children().remove();
+            var userId = $('#unAssign-user-op').val();
+            serviceContext.DeviceAssignationService().ReadByID(userId, populateUnasignDeviceDropdown);
+        });
+
+        $("#unAssign-device-button").on('click', function () {
+
+        });
     }
 };
