@@ -4,7 +4,7 @@
         ajaxService('DeviceAssignation/SetUser', 'POST', data ,handleData, '#user_profile');
     };
     this.RemoveUser = function (data, handleData) {
-        ajaxService('DeviceAssignation/RemoveUser', 'POST', data, handleData, '#user_profile');
+        ajaxService('DeviceAssignation/RemoveUser' + data, 'PUT', data, handleData, '#user_profile');
     };
 
     this.GetFreeDevice = function (data, handleData) {

@@ -23,8 +23,8 @@ namespace MobiManager.API.Controllers
             }
         }
 
-        [HttpPost]
-        [Route("RemoveUser")]
+        [HttpPut]
+        [Route("RemoveUser/{deviceID}")]
         public void RemoveUser(Guid deviceID)
         {
             using (BusinessContext context = new BusinessContext())
