@@ -23,7 +23,7 @@
                 RAMAmount: $('#details-device-ramAmount').val() == '' ? CURENT_Device.RAMAmount : $('#details-device-ramAmount').val()
             }
             var Type = $('#details-device-type').val();
-            if (validateDigit($('#details-device-ramAmount').val()) != 0) {
+            if (validateDigit($('#details-device-ramAmount').val()) == 0) {
                 alert('invalid Ram');
             }
             else {
