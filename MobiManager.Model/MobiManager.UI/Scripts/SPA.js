@@ -1,5 +1,5 @@
 ﻿function SPA() {
-
+    window.location.hash = '#home';
     function setActiveLink(fragmentId) {
         $(".page-content").each(function (i, divElement) {
             divElement = $(this).attr('id');
@@ -30,12 +30,10 @@
 
     $(".singin-page").on("click", function () {
         window.location.hash = '#singin';
-
     });
 
     $(".back-home").on("click", function () {
         window.history.back();
     });
 
-    // window.hash = "#home"; 
 }

@@ -36,6 +36,16 @@
                     Role: role,
                     Location: location
                 };
+
+                function checkteUserData(userName) {
+                    if (userName) {
+                        if (userName == userInput.UserName)
+                            alert('This UserName already exists ' + 'UserName : ' + userName + ' ');
+                    } else {
+                        serviceContext.UserService().Insert(userInput, responseNewUser)
+                    }
+                }
+
                 if (validate(userInput) == 1) {
                     function responseNewUser(data) {
                         alert('New account created!   now you can login :)');
@@ -204,14 +214,5 @@
         serviceContext.UserService().ReadById(CURENT_USER.UserID, UserReadByIdCallBack);
         serviceContext.UserService().DevicesList('', PopulateDeviceList);
         serviceContext.UserService().ReadAll('', PopulateUserList);
-    }
-
-    function checkteUserData(userName) {
-        if (userName) {
-            if (userName == userInput.UserName)
-                alert('This UserName already exists ' + 'UserName : ' + userName + ' ');
-        } else {
-            serviceContext.UserService().Insert(userInput, responseNewUser)
-        }
     }
 };
