@@ -38,9 +38,8 @@
     };
 
     function DeviceSuccessInsert(data) {
-        alert('create successful');
         $("#addNewDevice .close").click();
-
+        alert('create successful');
         serviceContext.UserService().DevicesList('', PopulateDeviceList);
         serviceContext.DeviceAssignationService().GetFreeDevice('', PopulateFreeDeviceList);
     }
@@ -73,7 +72,7 @@
                         Processor: device.Processor,
                         RAMAmount: device.RAMAmount
                     }
-                    serviceContext.DeviceService().Update(deviceOK, DeviceSuccessInsert);
+                    serviceContext.DeviceService().Update(deviceOK, DeviceSuccessUpdate);
 
                 }
             }
@@ -122,7 +121,7 @@
                         Processor: device.Processor,
                         RAMAmount: device.RAMAmount
                     }
-                    serviceContext.DeviceService().Insert(deviceOK, DeviceSuccessUpdate);
+                    serviceContext.DeviceService().Insert(deviceOK, DeviceSuccessInsert);
 
                 }
             }
