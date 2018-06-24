@@ -1,6 +1,7 @@
 ﻿var UserController = function (serviceContext) {
     
     this.SigIn = function () {
+        //data focusOut event
         var firstName = '';
         $('#new-firstName').focusout(function () {
             firstName = validationText($('#new-firstName').val(), '#new-firstName');
@@ -21,6 +22,7 @@
             cPassword = validaterePassword($('#new-c-password').val(), password, '#new-c-password');
         });
 
+        //button triggered
         $('#singIn').on('click', function () {
             var role = dropdownValidate($('#new-role').val(), '#new-role');
             var location = dropdownValidate($('#new-location').val(), '#new-location');
@@ -38,16 +40,6 @@
                     function responseNewUser(data) {
                         alert('New account created!   now you can login :)');
                         window.location.hash = '#home';
-                    }
-
-                    function checkteUserData(userName) {
-                        if (userName) {
-                            if (userName == userInput.UserName)
-                                alert('This UserName already exists ' + 'UserName : ' + userName + ' ');
-                        } else {
-                            serviceContext.UserService().Insert(userInput, responseNewUser)
-                        }
-
                     }
                     serviceContext.UserService().ReadUserName('#singin', userInput.UserName, checkteUserData);
                 }
@@ -83,7 +75,6 @@
                         serviceContext.UserService().DevicesList('', PopulateDeviceList);
                         serviceContext.UserService().ReadAll('', PopulateUserList);
                         serviceContext.DeviceAssignationService().GetFreeDevice('', PopulateFreeDeviceList);
-                        //
                     }
                 }
                 serviceContext.UserService().ReadLogIn(logIn, LogInCallBack);
@@ -92,18 +83,17 @@
                 alert('Incorect input!');
         });
     };
+
     this.LogOut = function () {
         $('#logOut').on('click', function () {
             $('#user_menu').attr("hidden", "true");
             $('#login-button').removeAttr('hidden');
-
             dataDismiss();
-            
         });
     };
 
     this.Setings = function () {
-      
+        //modal click set current data
         $('.setings').on('click', function () {
             $('.set').val('');
             $(".current-setings").html('');
@@ -114,6 +104,7 @@
             $("#current-Location").html(CURENT_USER.Location);
         });
 
+        //change event for fields
         var firstName = '';
         $('#new-seting-firstName').focusout(function () {
             if ($('#new-seting-firstName').val() != '' && $('#new-seting-firstName').val() != null)
@@ -144,6 +135,7 @@
             cPassword = validaterePassword($('#new-seting-new-cpassword').val(), nPassword, '#new-seting-new-cpassword');
         });
 
+        //button click
         $('#update-setings').on('click', function () {
 
             if ($('.set').hasClass('is-invalid'))
@@ -212,5 +204,14 @@
         serviceContext.UserService().ReadById(CURENT_USER.UserID, UserReadByIdCallBack);
         serviceContext.UserService().DevicesList('', PopulateDeviceList);
         serviceContext.UserService().ReadAll('', PopulateUserList);
+    }
+
+    function checkteUserData(userName) {
+        if (userName) {
+            if (userName == userInput.UserName)
+                alert('This UserName already exists ' + 'UserName : ' + userName + ' ');
+        } else {
+            serviceContext.UserService().Insert(userInput, responseNewUser)
+        }
     }
 };

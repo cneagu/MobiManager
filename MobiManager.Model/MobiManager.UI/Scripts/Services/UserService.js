@@ -19,7 +19,6 @@
     this.Update = function (data, handleData) {
         ajaxService('User/LogIn/Update', 'POST', data, handleData, '#user_profile');
     };
-    //read all
 
     this.ReadAll = function (data, handleData) {
         ajaxService('User/ReadAll', 'GET', '', handleData, '#user_profile');

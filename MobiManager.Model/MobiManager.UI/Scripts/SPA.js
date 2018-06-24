@@ -36,4 +36,6 @@
     $(".back-home").on("click", function () {
         window.history.back();
     });
+
+    // window.hash = "#home"; 
 }

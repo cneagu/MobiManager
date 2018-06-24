@@ -5,7 +5,6 @@
             $('.det').val('');
             var deviceID = $(this).data('guid');
             $(".currentDevice").html('');
-
             serviceContext.DeviceService().ReadByID(deviceID, populateDeviceDetail);
         });
     };

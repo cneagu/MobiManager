@@ -10,18 +10,6 @@
     }
 }
 
-//function validateEmail(email, id) {
-//    if (!(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i.test(email))) {
-//        $(id).addClass("is-invalid");
-//        email = '';
-//        return email;
-//    } else {
-//        $(id).removeClass("is-invalid");
-//        $(id).addClass("is-valid");
-//        return email;
-//    }
-//}
-
 function validateUsername(username, id) {
     if (!(/^[a-z][a-z0-9_.-]{4,19}$/i.test(username))) {
         $(id).addClass("is-invalid");
