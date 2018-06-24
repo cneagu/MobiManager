@@ -22,7 +22,6 @@
             $("#assingDevice .close").click();
             serviceContext.UserService().DevicesList('', PopulateDeviceList);
             serviceContext.DeviceAssignationService().GetFreeDevice('', PopulateFreeDeviceList);
-            serviceContext.DeviceAssignationService().ReadByID(CURENT_USER.UserID, PopulateDeviceAssignList);
         }
 
         $('#assign-device-button').on('click', function () {
@@ -53,7 +52,18 @@
         });
 
         $("#unAssign-device-button").on('click', function () {
-
+            var deviceID = dropdownValidate($('#unAssign-device-op').val(), '#unAssign-device-op');
+                         
+            if (deviceID !== '' || deviceID !== null) {
+                serviceContext.DeviceAssignationService().RemoveUser(deviceID, DeviceUnassignCallback);
+            }
         });
+    }
+
+    function DeviceUnassignCallback(data) {
+        alert('Device UNassign');
+        $("#unAssingDevice .close").click();
+        serviceContext.UserService().DevicesList('', PopulateDeviceList);
+        serviceContext.DeviceAssignationService().GetFreeDevice('', PopulateFreeDeviceList);
     }
 };

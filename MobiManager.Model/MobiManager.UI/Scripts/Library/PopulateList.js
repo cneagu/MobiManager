@@ -44,6 +44,7 @@ function populateUnasignDeviceDropdown(data) {
     for (var i in CURRENT_AssignDevice) {
         for (var j in CURRENT_AllDevice) {
             if (CURRENT_AssignDevice[i].DeviceID === CURRENT_AllDevice[j].DeviceID) {
+
                 $('#unAssign-device-op').append("<option value='" + CURRENT_AssignDevice[i].DeviceID + "'>" + CURRENT_AllDevice[j].Name + "</option>");
                 k++;
             }

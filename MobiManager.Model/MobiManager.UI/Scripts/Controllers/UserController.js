@@ -92,7 +92,6 @@
                         serviceContext.UserService().DevicesList('', PopulateDeviceList);
                         serviceContext.UserService().ReadAll('', PopulateUserList);
                         serviceContext.DeviceAssignationService().GetFreeDevice('', PopulateFreeDeviceList);
-                        serviceContext.DeviceAssignationService().ReadByID(guid, PopulateDeviceAssignList);
                         //
                     }
                 }
