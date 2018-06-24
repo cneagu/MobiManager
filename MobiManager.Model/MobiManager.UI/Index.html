@@ -175,7 +175,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-3">
-                        <a href="#" id="newDevicem" class="btn btn-primary btn-block" data-toggle="modal" data-target="#addNewDevice">
+                        <a href="#" id="newDeviceModal" class="btn btn-primary btn-block" data-toggle="modal" data-target="#addNewDevice">
                             <i class="fa fa-plus"></i> New Device
                         </a>
                     </div>
@@ -440,11 +440,11 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="deviceName">Name</label>
-                        <input type="text" name="new-name" id="new-name" class="form-control" placeholder="Name">
+                        <input type="text" name="new-name" id="new-name" class="form-control newe" placeholder="Name">
                     </div>
                     <div class="form-group">
                         <label for="Manufacturer">Manufacturer</label>
-                        <input type="text" name="new-manufacturer" id="new-manufacturer" class="form-control" placeholder="Manufacturer">
+                        <input type="text" name="new-manufacturer" id="new-manufacturer" class="form-control newe" placeholder="Manufacturer">
                     </div>
                     <div class="form-group">
                         <label for="Type">Type</label>
@@ -456,19 +456,19 @@
                     </div>
                     <div class="form-group">
                         <label for="OperatingSystem">Operating System</label>
-                        <input type="text" name="new-operatingSystem" id="new-operatingSystem" class="form-control" placeholder="OperatingSystem">
+                        <input type="text" name="new-operatingSystem" id="new-operatingSystem" class="form-control newe" placeholder="OperatingSystem">
                     </div>
                     <div class="form-group">
                         <label for="OSVersion">OS Version</label>
-                        <input type="text" name="new-osVersion" id="new-osVersion" class="form-control" placeholder="OSVersion">
+                        <input type="text" name="new-osVersion" id="new-osVersion" class="form-control newe" placeholder="OSVersion">
                     </div>
                     <div class="form-group">
                         <label for="Processor">Processor</label>
-                        <input type="text" name="new-processor" id="new-processor" class="form-control" placeholder="Processor">
+                        <input type="text" name="new-processor" id="new-processor" class="form-control newe" placeholder="Processor">
                     </div>
                     <div class="form-group">
                         <label for="RAMAmount">RAM Amount</label>
-                        <input type="text" name="new-ramAmount" id="new-ramAmount" class="form-control" placeholder="RAMAmount">
+                        <input type="text" name="new-ramAmount" id="new-ramAmount" class="form-control newe" placeholder="RAMAmount">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -572,7 +572,7 @@
                         </div>
                         <div class="col-md-6 form-group form-group-sm">
                             <label for="text">Edit device Name</label>
-                            <input name="details-device-name" id="details-device-name" class="form-control" placeholder="Edit Device Name">
+                            <input name="details-device-name" id="details-device-name" class="form-control det" placeholder="Edit Device Name">
                         </div>
                     </div>
                     <div class="modal-header">
@@ -587,7 +587,7 @@
                         </div>
                         <div class="col-md-6 form-group form-group-sm">
                             <label for="Text">Edit device Manufacturer</label>
-                            <input name="details-device-manufacturer" id="details-device-manufacturer" class="form-control" placeholder="Edit Device Manufacturer">
+                            <input name="details-device-manufacturer" id="details-device-manufacturer" class="form-control det" placeholder="Edit Device Manufacturer">
                         </div>
                     </div>
                     <div class="modal-header">
@@ -602,7 +602,7 @@
                         </div>
                         <div class="col-md-6 form-group form-group-sm">
                             <label for="Text">Edit device Type</label>
-                            <select name="details-device-type" class="form-control form-control-sm" id="details-device-type" required>
+                            <select name="details-device-type" class="form-control form-control-sm det" id="details-device-type" required>
                                 <option value="" disabled selected>Select new type</option>
                                 <option value="0">Phone</option>
                                 <option value="1">Tablet</option>
@@ -621,7 +621,7 @@
                         </div>
                         <div class="col-md-6 form-group form-group-sm">
                             <label for="Text">Edit device OperatingSystem</label>
-                            <input name="details-device-operatingSystem" id="details-device-operatingSystem" class="form-control" placeholder="Edit Device OperatingSystem">
+                            <input name="details-device-operatingSystem" id="details-device-operatingSystem" class="form-control det" placeholder="Edit Device OperatingSystem">
                         </div>
                     </div>
                     <div class="modal-header">
@@ -636,7 +636,7 @@
                         </div>
                         <div class="col-md-6 form-group form-group-sm">
                             <label for="Text">Edit device OS Version</label>
-                            <input name="details-device-osVersion" id="details-device-osVersion" class="form-control" placeholder="Edit Device OS Version">
+                            <input name="details-device-osVersion" id="details-device-osVersion" class="form-control det" placeholder="Edit Device OS Version">
                         </div>
                     </div>
                     <div class="modal-header">
@@ -651,7 +651,7 @@
                         </div>
                         <div class="col-md-6 form-group form-group-sm">
                             <label for="Text">Edit device Processor</label>
-                            <input name="details-device-processor" id="details-device-processor" class="form-control" placeholder="Edit Device Processor">
+                            <input name="details-device-processor" id="details-device-processor" class="form-control det" placeholder="Edit Device Processor">
                         </div>
                     </div>
                     <div class="modal-header">
@@ -666,7 +666,7 @@
                         </div>
                         <div class="col-md-6 form-group form-group-sm">
                             <label for="Text">Edit device RAM Amount</label>
-                            <input name="details-device-ramAmount" id="details-device-ramAmount" class="form-control" placeholder="Edit Device RAMAmount">
+                            <input name="details-device-ramAmount" id="details-device-ramAmount" class="form-control det" placeholder="Edit Device RAMAmount">
                         </div>
                     </div>
 

@@ -189,7 +189,6 @@
                 };
 
                 if (validate(user) == 1) {
-                    console.log(user);
                     serviceContext.UserService().Update(user, UpdatecallBack);
                 }
             }
@@ -209,7 +208,7 @@
 
     function UpdatecallBack(data) {
         $("#setings .close").click();
-        alert('Success! You need to Log In again');
+        alert('Success! Your data has change');
         serviceContext.UserService().ReadById(CURENT_USER.UserID, UserReadByIdCallBack);
         serviceContext.UserService().DevicesList('', PopulateDeviceList);
         serviceContext.UserService().ReadAll('', PopulateUserList);
