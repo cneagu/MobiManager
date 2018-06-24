@@ -34,7 +34,7 @@ namespace MobiManager.API.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpDelete]
         [Route("Delete/{deviceID}")]
         public void Delete(Guid deviceID)
         {

@@ -82,6 +82,7 @@
     function DeleteDevice(data) {
         alert('success delete');
         serviceContext.UserService().DevicesList('', PopulateDeviceList);
+        serviceContext.DeviceAssignationService().GetFreeDevice('', PopulateFreeDeviceList);
     }
 
     this.DeviceDelete = function () {

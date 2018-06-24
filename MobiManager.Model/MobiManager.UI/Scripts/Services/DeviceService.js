@@ -13,6 +13,6 @@
     };
 
     this.Delete = function (data, handleData) {
-        ajaxService('Device/Delete' + data, 'GET', '', handleData, '#user_profile');
+        ajaxService('Device/Delete/' + data, 'DELETE', '', handleData, '#user_profile');
     };
 };

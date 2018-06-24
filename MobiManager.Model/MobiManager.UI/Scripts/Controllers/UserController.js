@@ -71,15 +71,6 @@
                     UserName: luserName,
                     Password: lpassword
                 };
-                function UserReadByIdCallBack(user) {
-                    CURENT_USER = user;
-                    $("#loginModal .close").click();
-                    $('#user_menu').removeAttr('hidden');
-                    $('#login-button').attr("hidden", "true");
-                    $('#head-userName').html("<i class='fa fa-user'></i>  " + user.UserName);
-                }
-
-                
 
                 function LogInCallBack(guid) {
                     if (guid == '00000000-0000-0000-0000-000000000000') {
@@ -114,6 +105,7 @@
     this.Setings = function () {
       
         $('.setings').on('click', function () {
+            $('.set').val('');
             $(".current-setings").html('');
             $("#current-FirstName").html(CURENT_USER.FirstName);
             $("#current-LastName").html(CURENT_USER.LastName);
@@ -124,30 +116,68 @@
 
         var firstName = '';
         $('#new-seting-firstName').focusout(function () {
-            firstName = validationText($('#new-seting-firstName').val(), '#new-seting-firstName');
+            if ($('#new-seting-firstName').val() != '' && $('#new-seting-firstName').val() != null)
+                firstName = validationText($('#new-seting-firstName').val(), '#new-seting-firstName');
+            else
+                firstName = CURENT_USER.FirstName;
         });
         var lastName = '';
         $('#new-seting-LastName').focusout(function () {
-            lastName = validationText($('#new-seting-LastName').val(), '#new-seting-LastName');
+            if ($('#new-seting-LastName').val() != '' && $('#new-seting-LastName').val() != null)
+                lastName = validationText($('#new-seting-LastName').val(), '#new-seting-LastName');
+            else
+                LastName = CURENT_USER.LastName;
         });
         var userName = '';
         $('#new-seting-username').focusout(function () {
-            userName = validateUsername($('#new-seting-username').val(), '#new-seting-username');
+            if ($('#new-seting-username').val() != '' && $('#new-seting-username').val() != null)
+                userName = validateUsername($('#new-seting-username').val(), '#new-seting-username');
+            else
+                userName = CURENT_USER.UserName;
         });
         var nPassword = '';
         $('#new-seting-new-password').focusout(function () {
             nPassword = validatePassword($('#new-seting-new-password').val(), '#new-seting-new-password');
         });
-        var cPassword = $('#new-seting-new-cpassword').focusout(function () {
+        var cPassword = '';
+         $('#new-seting-new-cpassword').focusout(function () {
             cPassword = validaterePassword($('#new-seting-new-cpassword').val(), nPassword, '#new-seting-new-cpassword');
         });
 
         $('#update-setings').on('click', function () {
-            var password = validateCurentPassword($('#new-seting-curent-password').val());
-            var role = dropdownValidate($('#new-seting-role').val(), '#new-seting-role');
-            var location = dropdownValidate($('#new-seting-location').val(), '#new-seting-location');
+
+            if ($('.set').hasClass('is-invalid'))
+                alert('somthing is not OK');
+            else {
+                if (firstName == '') 
+                    firstName = CURENT_USER.FirstName;
+                if (lastName == '')    
+                    lastName = CURENT_USER.LastName;
+                if (userName == '')
+                    userName = CURENT_USER.UserName;
+                var password = '';
+                if ($('#new-seting-curent-password').val() == '' || $('#new-seting-curent-password').val() == null)
+                    password = CURENT_USER.Password;
+                else
+                    password = validateCurentPassword($('#new-seting-curent-password').val());
+
+                var role = '';
+                var location = '';
+
+                if ($('#new-seting-role').val() == '' || $('#new-seting-role').val() == null)
+                    role = CURENT_USER.Role;
+                else
+                    role = dropdownValidate($('#new-seting-role').val(), '#new-seting-role');
+
+                if ($('#new-seting-location').val() == '' || $('#new-seting-location').val() == null)
+                    location = CURENT_USER.Location;
+                else
+                    location = dropdownValidate($('#new-seting-location').val(), '#new-seting-location');
+            }
 
             if (password !== '' && nPassword === cPassword) {
+                if (nPassword !== '')
+                    password = nPassword;
                 var user = {
                     UserID: CURENT_USER.UserID,
                     FirstName: firstName,
@@ -159,19 +189,29 @@
                 };
 
                 if (validate(user) == 1) {
-                    serviceContext.UserService().Update(user, callBack);
+                    console.log(user);
+                    serviceContext.UserService().Update(user, UpdatecallBack);
                 }
             }
             else {
                 alert('incorect password');
             }
-            function callBack(data) {
-                alert('Success! You need to Log In again');
-                $('#user_menu').attr("hidden", "true");
-                $('#login-button').removeAttr('hidden');
-
-                dataDismiss();
-            }
         });
     };
+
+    function UserReadByIdCallBack(user) {
+        CURENT_USER = user;
+        $("#loginModal .close").click();
+        $('#user_menu').removeAttr('hidden');
+        $('#login-button').attr("hidden", "true");
+        $('#head-userName').html("<i class='fa fa-user'></i>  " + user.UserName);
+    }
+
+    function UpdatecallBack(data) {
+        $("#setings .close").click();
+        alert('Success! You need to Log In again');
+        serviceContext.UserService().ReadById(CURENT_USER.UserID, UserReadByIdCallBack);
+        serviceContext.UserService().DevicesList('', PopulateDeviceList);
+        serviceContext.UserService().ReadAll('', PopulateUserList);
+    }
 };
